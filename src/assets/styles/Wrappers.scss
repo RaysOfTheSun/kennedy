@@ -1,0 +1,56 @@
+@import "globals";
+
+/* Padding Wrappers */
+.wrap-20 {
+  padding: 20px;
+}
+
+.wrap-50 {
+  padding: 50px;
+}
+
+.wrap-100 {
+  padding: 100px;
+}
+
+/* Positioning Wrappers */
+.p-relative {
+  position: relative;
+}
+
+/* Element Specific Wrappers */
+.bullet-less {
+  list-style: none;
+}
+
+/* effect removal */
+.after-none {
+  &:after {
+    content: '' !important;
+  }
+}
+
+.transform-none {
+  text-transform: none !important;
+  transform: none !important;
+}
+
+/* Flex Wrappers */
+.flex-grow {
+  flex: 1 0 50%;
+}
+
+.flex-mobile-column {
+  flex-direction: column;
+  @include respond-to(tablet-landscape-up) {
+    flex-direction: row;
+  }
+}
+
+/* Width Wrappers */
+.w-40-70 {
+  width: 70%;
+  @include respond-to(tablet-portrait-up){
+    width: 40%;
+  }
+}
