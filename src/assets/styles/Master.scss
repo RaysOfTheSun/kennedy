@@ -11,3 +11,95 @@ body {
   font-size: 12px !important;
   font-family: $font-open-sans !important;
 }
+
+.footer-icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.footer-nav {
+  width: 100%;
+  display: flex;
+  & .footer-pipe {
+    background-color: $color-second-level-link;
+    border: 0;
+    color: $color-second-level-link;
+    height: 2px;
+    width: 36px;
+    display: none;
+    @include respond-to(desktop-up) {
+      display: block;
+    }
+  }
+  & > .footer-nav-item {
+    margin: 0;
+    @include respond-to(desktop-up) {
+      margin-right: auto;
+    }
+    & > .footer-nav-header {
+      font-size: 1.5rem;
+      padding: 10px 0;
+      border-bottom: thin solid $color-second-level-link;
+      cursor: pointer;
+      &:after {
+        content: "\002B";
+        position: absolute;
+        right: 0;
+        margin-right: 10%;
+        font-size: 2.5rem;
+        cursor: pointer;
+        transform: translate3d(0, -25%, 0);
+        -webkit-transition: transform 0.3s ease-in-out;
+        -moz-transition: transform 0.3s ease-in-out;
+        -ms-transition: transform 0.3s ease-in-out;
+        -o-transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
+      }
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      @include respond-to(desktop-up) {
+        border: none;
+        padding: 0;
+        &:after {
+          content: "";
+        }
+        font-size: 14px;
+      }
+    }
+  }
+  & ul > li {
+    & > a {
+      color: $color-second-level-link;
+    }
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 18px;
+    margin: 10px 0;
+    @include respond-to(desktop-up) {
+      font-size: 13px;
+    }
+  }
+}
+
+.footer-nav-links {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s linear;
+  @include respond-to(desktop-up) {
+    max-height: initial;
+  }
+}
+
+.collapsed {
+  & .footer-nav-links {
+    max-height: 250px;
+  }
+  & .footer-nav-header {
+    &:after {
+      transform: rotate3d(0, 0, -1, 45deg) translate3d(0, -25%, 0) !important;
+    }
+  }
+}

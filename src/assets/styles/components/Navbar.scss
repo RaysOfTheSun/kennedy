@@ -1,5 +1,12 @@
 @import "../globals";
 
+.navigation-landed {
+  position: absolute !important;
+  background-color: transparent !important;
+  top: 0;
+  width: 100%;
+}
+
 .navigation {
   & .navigation-mega-item {
     &:hover {
@@ -7,6 +14,7 @@
         visibility: visible;
         opacity: 1;
       }
+
       & .navigation-mega-container {
         visibility: visible;
         opacity: 1;
@@ -24,13 +32,16 @@
     opacity: 0;
     transition: visibility 0.4s ease-in-out,
     opacity 0.4s ease-in-out;
-    z-index: 2;
+    z-index: 4;
     padding-top: 30px;
+
     &:hover {
       visibility: visible;
       opacity: 1;
+
       & + .navigation-primary-link {
         animation: active 0.4s linear infinite alternate;
+
         &:after {
           transform: translate3d(90%, -50%, 0) rotate3d(0, -1, 0, 180deg);
         }
@@ -40,13 +51,16 @@
 
   & .navigation-mega-menu {
     margin: 0 40px;
+
     & > ul > li {
       padding: 10px 0;
       font-size: 14px;
+
       & > a {
         color: $color-second-level-link;
       }
     }
+
     & .navigation-mega-menu-header {
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -58,6 +72,7 @@
 
 .navigation-dark {
   background-color: black;
+
   * {
     color: white;
   }
@@ -67,6 +82,7 @@
   padding: 15px;
   position: relative;
   text-transform: uppercase;
+
   &:after {
     content: "\2038";
     font-size: 2rem;
@@ -75,10 +91,12 @@
     transition: transform 0.3s linear;
     transform: translate3d(90%, 0, 0) rotate3d(1, 0, 0, 180deg);
   }
+
   &:hover {
     &:after {
       transform: translate3d(90%, -50%, 0) rotate3d(0, -1, 0, 180deg);
     }
+
     animation: active 0.4s linear infinite alternate;
   }
 }
@@ -94,7 +112,7 @@
   opacity: 0;
   transition: visibility 0.4s ease-in-out,
   opacity 0.4s ease-in-out;
-  z-index: 1;
+  z-index: 3;
 }
 
 #sign-in {
@@ -103,11 +121,12 @@
       opacity: 1;
       visibility: visible;
     }
-    & > a  {
+
+    & > a {
       animation: active 0.4s linear infinite alternate;
+
       &:after {
-        transform: translate3d(90%, -50%, 0)
-        rotate3d(0, -1, 0, 180deg);
+        transform: translate3d(90%, -50%, 0) rotate3d(0, -1, 0, 180deg);
       }
     }
   }
@@ -121,12 +140,13 @@
   min-width: 300px;
   padding: 10px 20px;
   border: 1.5px solid #d1d4d6;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.4s ease-in-out,
   opacity 0.4s ease-in-out;
   z-index: 3;
+
   & .btn-input-lg {
     text-transform: uppercase;
     width: 100%;
@@ -134,11 +154,13 @@
     font-size: 1.5rem;
     font-weight: 600;
     transition: background-color 0.4s linear;
+
     &:hover {
       background-color: #0d47a1;
       color: white;
     }
   }
+
   &:hover {
     visibility: visible;
     opacity: 1;

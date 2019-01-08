@@ -8,9 +8,9 @@ class Navbar extends Component {
 
     render() {
         return (
-            <div className="d-flex justify-content-center flex-column">
+            <div className="d-flex justify-content-center flex-column bg-black navigation-landed">
                 <div className="nav-header d-flex justify-content-around align-items-center
-                                bg-black text-white w-100 wrap-20">
+                                text-white w-100 wrap-20">
                     <div className="d-flex justify-content-center align-items-center">
                         <div className="input-group">
                             <div className="input-group-prepend">
@@ -40,7 +40,7 @@ class Navbar extends Component {
                         <i className="fas fa-shopping-cart mr-5"></i>
                     </div>
                 </div>
-                <div className="navigation navigation-dark d-flex justify-content-center">
+                <div className="navigation text-white d-flex justify-content-center">
                     <ul className="d-flex justify-content-center bullet-less link-plain p-relative w-100 mb-0">
                         <li className="navigation-mega-item d-flex">
                             <div className="navigation-mega-container d-flex justify-content-center w-100">

@@ -2,11 +2,13 @@
 
 .link-plain {
   text-decoration: none !important;
+
   & a {
     color: white;
     text-decoration: none !important;
+
     &:hover {
-      color: black;
+      color: white;
       text-decoration: none !important;
     }
   }
@@ -22,8 +24,25 @@
 }
 
 .line-height-2 {
-  line-height: 1rem;
-  @include respond-to(tablet-landscape-up) {
-    line-height: 2.5rem;
+  line-height: 2.5rem;
+}
+
+/* Alignments */
+.text-align-center-lg {
+  text-align: left;
+  @include respond-to(tablet-portrait-up) {
+    text-align: center;
   }
+}
+
+/* Sizing */
+.text-emphasize {
+  font-size: 4rem;
+  @include respond-to(desktop-up) {
+    font-size: 6.5rem;
+  }
+}
+
+.text-emphasize-medium {
+  font-size: 3rem;
 }

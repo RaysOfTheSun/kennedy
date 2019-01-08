@@ -42,7 +42,7 @@
 
 .flex-mobile-column {
   flex-direction: column;
-  @include respond-to(tablet-landscape-up) {
+  @include respond-to(desktop-up) {
     flex-direction: row;
   }
 }
@@ -54,3 +54,50 @@
     width: 40%;
   }
 }
+
+.w-75-100 {
+  width: 100%;
+  @include respond-to(tablet-portrait-up){
+    width: 75%;
+  }
+}
+
+.w-40-70-100 {
+  width: 100%;
+  @include respond-to(tablet-portrait-up) {
+    width: 70%;
+  }
+  @include respond-to(desktop-up) {
+    width: 40%;
+  }
+}
+
+.w-25-70-100 {
+  width: 100%;
+  @include respond-to(tablet-portrait-up) {
+    width: 70%;
+  }
+  @include respond-to(desktop-up) {
+    width: 50%;
+  }
+  @include respond-to(big-desktop-up) {
+    width: 25%;
+  }
+}
+
+.kenny-container {
+  max-width: 1140px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  @include respond-to(big-desktop-up) {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include respond-to(tablet-portrait-up) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
