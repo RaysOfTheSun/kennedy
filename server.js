@@ -2,7 +2,11 @@ const path = require('path');
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
+const favicon = require('serve-favicon');
 const app = express();
+
+// set our favicon
+app.use(favicon(path.join(__dirname, 'dist', 'app', 'images', 'favicon.ico')));
 
 // setup our middleware
 app.use(bodyParser.urlencoded({extended: true}));
@@ -19,6 +23,6 @@ app.use(express.static(path.join(__dirname, 'dist', 'app')));
 // set up our routes
 app.use('/', require('./routers/root'));
 
-app.listen((process.env.PORT || 3000), ()=>{
-   console.log('Kennedy is live at port 3000.');
+app.listen((process.env.PORT || 3000), () => {
+    console.log('Kennedy is live at port 3000.');
 });
