@@ -5,6 +5,10 @@
   background-color: transparent !important;
   top: 0;
   width: 100%;
+  transition: background-color 0.4s ease-in-out;
+  &:hover {
+    background-color: black !important;
+  }
 }
 
 .navigation {
@@ -165,11 +169,6 @@
     visibility: visible;
     opacity: 1;
   }
-}
-
-.btn-input-lg {
-  padding: 15px 20px;
-  cursor: pointer;
 }
 
 @keyframes active {

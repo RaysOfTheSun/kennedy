@@ -85,6 +85,7 @@
   }
 }
 
+/* Containers */
 .kenny-container {
   max-width: 1140px;
   padding-left: 15px;
@@ -101,3 +102,57 @@
   }
 }
 
+.kennedy-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-weight: 700;
+  text-align: center;
+  max-width: 100%;
+  min-height: 320px;
+  &:hover {
+    & .card-image {
+      & > img {
+        transform: scale3d(1.1, 1.1, 1.1);
+      }
+    }
+  }
+  & .card-image {
+    & > img {
+      -webkit-transition: transform 0.3s ease-in-out;
+      -moz-transition: transform 0.3s ease-in-out;
+      -ms-transition: transform 0.3s ease-in-out;
+      -o-transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
+      object-fit: cover;
+    }
+    &:hover {
+      & > img {
+        transform: scale3d(1.1, 1.1, 1.1);
+      }
+    }
+  }
+  & .card-content {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & .card-content-header {
+      & > a {
+        color: #acb1b4 !important;
+        font-size: 11px;
+      }
+    }
+    & > .card-content-text {
+      text-transform: uppercase;
+    }
+  }
+
+  @include respond-to(desktop-up) {
+    max-width: 350px;
+  }
+}

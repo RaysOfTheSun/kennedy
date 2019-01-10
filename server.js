@@ -22,6 +22,8 @@ app.use(express.static(path.join(__dirname, 'dist', 'app')));
 
 // set up our routes
 app.use('/', require('./routers/root'));
+// API endpoints
+app.use('/get-collections', require('./routers/get-collections'));
 
 app.listen((process.env.PORT || 3000), () => {
     console.log('Kennedy is live at port 3000.');

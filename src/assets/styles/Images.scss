@@ -1,0 +1,9 @@
+@import "globals";
+
+.image-350-100p {
+  width: 100%;
+  height: auto;
+  @include respond-to(desktop-up) {
+    width: 350px;
+  }
+}
