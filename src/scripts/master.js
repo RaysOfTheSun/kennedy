@@ -1,4 +1,7 @@
 window.onload = () => {
+    // make our content visible now that everything has been loaded up
+    document.documentElement.classList.remove('no-flash');
+    // handlers for our footer
     function handleClick() {
         const target = document.getElementById(this.getAttribute('data-nav'));
         target.classList.toggle('collapsed');

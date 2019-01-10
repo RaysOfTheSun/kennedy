@@ -7,4 +7,5 @@ import './assets/styles/Wrappers.scss';
 import './assets/styles/Inputs.scss';
 import './assets/styles/components/Navbar.scss';
 import './assets/styles/Index.scss';
+import "./assets/styles/Images.scss";
 import './scripts/master';

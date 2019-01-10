@@ -23,6 +23,10 @@
   font-family: $font-pacifico !important;
 }
 
+.font-montserrat {
+  font-family: $font-montserrat;
+}
+
 .line-height-2 {
   line-height: 2.5rem;
 }
@@ -45,4 +49,15 @@
 
 .text-emphasize-medium {
   font-size: 3rem;
+}
+
+.section-header {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 30px;
+}
+
+.section-desc {
+  text-transform: uppercase;
+  margin: 8px 0 30px;
 }

@@ -5,7 +5,8 @@ const DIST_DIR = path.join(__dirname, './dist');
 module.exports = {
     mode: 'production',
     entry: {
-        main: ['./src/components/Navbar/Navbar.jsx', './src/main.js']
+        main: ['./src/components/Navbar/Navbar.jsx', './src/main.js'],
+        index: ['./src/components/CardGrid/CardGrid.jsx']
     },
     output: {
         path: path.join(DIST_DIR, 'app'),
