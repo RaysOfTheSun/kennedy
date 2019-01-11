@@ -27,6 +27,10 @@
   font-family: $font-montserrat;
 }
 
+.font-small {
+  font-size: 11px !important;
+}
+
 .line-height-2 {
   line-height: 2.5rem;
 }
@@ -60,4 +64,15 @@
 .section-desc {
   text-transform: uppercase;
   margin: 8px 0 30px;
+}
+
+.line-height-18-26 {
+  line-height: 26px;
+  @include respond-to(desktop-up) {
+    line-height: 18px;
+  }
+}
+/* Coloring */
+.text-kenny-black {
+  color: $kenny-black;
 }

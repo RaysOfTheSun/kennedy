@@ -13,6 +13,10 @@
   padding: 100px;
 }
 
+.wrap-top-30 {
+  padding-top: 30px;
+}
+
 /* Positioning Wrappers */
 .p-relative {
   position: relative;
@@ -50,14 +54,14 @@
 /* Width Wrappers */
 .w-40-70 {
   width: 70%;
-  @include respond-to(tablet-portrait-up){
+  @include respond-to(tablet-portrait-up) {
     width: 40%;
   }
 }
 
 .w-75-100 {
   width: 100%;
-  @include respond-to(tablet-portrait-up){
+  @include respond-to(tablet-portrait-up) {
     width: 75%;
   }
 }
@@ -87,18 +91,13 @@
 
 /* Containers */
 .kenny-container {
-  max-width: 1140px;
+  max-width: 100%;
   padding-left: 15px;
   padding-right: 15px;
-  margin: 0 auto;
-  @include respond-to(big-desktop-up) {
-    max-width: 1500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  @include respond-to(tablet-portrait-up) {
-    margin-left: auto;
-    margin-right: auto;
+  margin: 0;
+  @include respond-to(desktop-up) {
+    max-width: 1140px;
+    margin: 0 auto;
   }
 }
 
@@ -113,6 +112,7 @@
   text-align: center;
   max-width: 100%;
   min-height: 320px;
+
   &:hover {
     & .card-image {
       & > img {
@@ -120,6 +120,7 @@
       }
     }
   }
+
   & .card-image {
     & > img {
       -webkit-transition: transform 0.3s ease-in-out;
@@ -129,30 +130,47 @@
       transition: transform 0.3s ease-in-out;
       object-fit: cover;
     }
+
     &:hover {
       & > img {
         transform: scale3d(1.1, 1.1, 1.1);
       }
     }
   }
+
   & .card-content {
     padding-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     & .card-content-header {
-      & > a {
-        color: #acb1b4 !important;
-        font-size: 11px;
-      }
+      color: #acb1b4 !important;
+      font-size: 11px;
+      font-weight: bold;
     }
+
     & > .card-content-text {
       text-transform: uppercase;
+      color: black !important;
+      & a {
+        color: black;
+      }
     }
   }
 
   @include respond-to(desktop-up) {
     max-width: 350px;
+  }
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @include respond-to(tablet-landscape-up) {
+    flex-direction: row;
   }
 }
