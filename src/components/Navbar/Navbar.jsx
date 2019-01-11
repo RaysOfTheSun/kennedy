@@ -8,7 +8,7 @@ class Navbar extends Component {
 
     render() {
         return (
-            <div className="d-flex justify-content-center flex-column bg-black navigation-landed">
+            <div className="kenny-nav d-flex justify-content-center flex-column bg-black navigation-landed">
                 <div className="nav-header d-flex justify-content-around align-items-center
                                 text-white w-100 wrap-20">
                     <div className="d-flex justify-content-center align-items-center">
