@@ -61,3 +61,10 @@
   text-transform: uppercase;
   margin: 8px 0 30px;
 }
+
+.line-height-18-26 {
+  line-height: 26px;
+  @include respond-to(desktop-up) {
+    line-height: 18px;
+  }
+}

@@ -22,7 +22,7 @@ class CardGrid extends Component {
                 {
                     this.state.data.map((collection, i) => (
                         <CardGridItem name={collection['name']} image={collection['image']}
-                                      content={collection['desc']} key={i}/>
+                                      content={collection['desc']} imageSize={this.props.imageSize} key={i}/>
                     ))
                 }
             </div>

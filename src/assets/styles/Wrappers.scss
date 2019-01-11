@@ -13,6 +13,10 @@
   padding: 100px;
 }
 
+.wrap-top-30 {
+  padding-top: 30px;
+}
+
 /* Positioning Wrappers */
 .p-relative {
   position: relative;
@@ -87,18 +91,13 @@
 
 /* Containers */
 .kenny-container {
-  max-width: 1140px;
+  max-width: 100%;
   padding-left: 15px;
   padding-right: 15px;
-  margin: 0 auto;
-  @include respond-to(big-desktop-up) {
-    max-width: 1500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  @include respond-to(tablet-portrait-up) {
-    margin-left: auto;
-    margin-right: auto;
+  margin: 0;
+  @include respond-to(desktop-up) {
+    max-width: 1140px;
+    margin: 0 auto;
   }
 }
 
