@@ -22,6 +22,7 @@
   position: relative;
 }
 
+
 /* Element Specific Wrappers */
 .bullet-less {
   list-style: none;
@@ -101,6 +102,65 @@
   }
 }
 
+.pos-left {
+  left: 0;
+}
+
+.pos-right {
+  right: 0;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row !important;
+  transition: transform 0.3s ease-in-out;
+  @include respond-to(tablet-landscape-up) {
+    max-width: 1140px;
+    margin: 0 auto;
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  & .arrow-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+
+    & .arrow {
+      background-color: black;
+      padding: 20px;
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+        transform: scale3d(1.1, 1.1, 1.1);
+      }
+    }
+
+    @include respond-to(tablet-landscape-up) {
+      display: none;
+    }
+  }
+
+  & .kennedy-card-shift {
+    transform: translate3d(56%, 0, 0);
+    @include respond-to(tablet-landscape-up) {
+      transform: none;
+    }
+  }
+
+  & .kennedy-card {
+    min-width: 300px;
+    @include respond-to(tablet-landscape-up) {
+      min-width: initial;
+    }
+  }
+}
+
 .kennedy-card {
   display: flex;
   justify-content: center;
@@ -154,6 +214,7 @@
     & > .card-content-text {
       text-transform: uppercase;
       color: black !important;
+
       & a {
         color: black;
       }
