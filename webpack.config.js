@@ -6,7 +6,7 @@ module.exports = {
     mode: 'production',
     entry: {
         main: ['./src/components/Navbar/Navbar.jsx', './src/main.js'],
-        index: ['./src/components/CardGrid/CardGrid.jsx']
+        index: ['./src/components/CardGrid/CardGrid.jsx', './src/components/DiscoverGrid/DiscoverGrid.jsx']
     },
     output: {
         path: path.join(DIST_DIR, 'app'),

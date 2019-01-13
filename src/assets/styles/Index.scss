@@ -1,7 +1,23 @@
+@import "globals";
+
 #landing-banner {
   background-image: url("/images/bg-03.jpg");
   background-size: cover;
   background-position: center;
+}
+
+.store-locator-banner {
+  background-image: url("/images/bg-02d.jpg");
+  height: auto;
+  background-position: center;
+  background-size: cover;
+  padding: 50% 5%;
+  @include respond-to(tablet-landscape-up) {
+    padding: 30% 5%;
+  }
+  @include respond-to(desktop-up) {
+    padding: 10%;
+  }
 }
 
 //.landing-half {
