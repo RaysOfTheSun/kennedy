@@ -17,6 +17,25 @@
   padding-top: 30px;
 }
 
+.wrap-x-50 {
+  padding: 50px 0;
+}
+
+.border-right-1-desk {
+  border-right: none;
+  @include respond-to(desktop-up) {
+    border-right: 1px solid $color-second-level-link;
+  }
+}
+.border-left-1-desk {
+  border-right: none;
+  @include respond-to(desktop-up) {
+    border-left: 1px solid $color-second-level-link;
+  }
+}
+
+
+
 /* Positioning Wrappers */
 .p-relative {
   position: relative;
@@ -110,16 +129,28 @@
   right: 0;
 }
 
+.indicator {
+  height: 5px;
+  width: 30px;
+  background-color: transparent;
+  border: thin solid black;
+  margin: 0 3px;
+  transition: background-color 0.4s ease-in-out;
+}
+
 .carousel-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row !important;
+  flex-direction: row;
   transition: transform 0.3s ease-in-out;
   @include respond-to(tablet-landscape-up) {
     max-width: 1140px;
     margin: 0 auto;
     transform: translate3d(0, 0, 0) !important;
+    & .indicator {
+      display: none;
+    }
   }
 
   & .arrow-container {
@@ -157,6 +188,25 @@
     min-width: 300px;
     @include respond-to(tablet-landscape-up) {
       min-width: initial;
+    }
+  }
+}
+
+.kennedy-card-dark-to-light {
+  & .card-image {
+    & > img {
+      transform: none !important;
+      filter: brightness(60%) saturate(0%);
+      transition: filter 0.4s ease-in-out !important;
+    }
+  }
+
+  &:hover {
+    & .card-image {
+      & > img {
+        transform: none !important;
+        filter: brightness(100%) saturate(100%);
+      }
     }
   }
 }
@@ -233,5 +283,19 @@
   flex-direction: column;
   @include respond-to(tablet-landscape-up) {
     flex-direction: row;
+  }
+}
+
+.display-mobile-none {
+  display: none;
+  @include respond-to(desktop-up) {
+    display: flex;
+  }
+}
+
+.display-mobile-flex {
+  display: flex;
+  @include respond-to(desktop-up) {
+    display: none;
   }
 }

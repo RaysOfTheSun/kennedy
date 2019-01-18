@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CardGridItem = ({name, image, content, imageSize, contentOrder, showDesc, shift}) => {
+const CardGridItem = ({name, image, content, imageSize, contentOrder, showDesc, shift, hoverEffect}) => {
     const imageSizeClass = imageSize === 'small' ? 'image-200-75p' :
         'image-350-100p';
     const headerPosition = contentOrder === 'reverse' ? 'order-1' : 'order-0';
@@ -9,8 +9,9 @@ const CardGridItem = ({name, image, content, imageSize, contentOrder, showDesc, 
         : 'card-content-header';
     const contentClass = contentOrder === 'reverse' ? 'card-content-header' : 'card-content-text';
     const shiftClass = shift ? ' kennedy-card-shift ' : ' ';
+    const hoverEffectClass = hoverEffect === 'lights' ? ' kennedy-card-dark-to-light ' : '';
     return (
-        <div className={`kennedy-card${shiftClass}link-plain`}>
+        <div className={`kennedy-card${shiftClass}${hoverEffectClass}link-plain`}>
             <a className={''} href={'#'}>
                 <div className={'card-image'}>
                     <img src={image} alt={name} className={imageSizeClass}/>
