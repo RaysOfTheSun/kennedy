@@ -8,19 +8,21 @@ export default class CardGrid extends Component {
     constructor(props) {
         super(props);
         this.getCollections = this.getCollections.bind(this);
-        this.state = {data: this.props.dbCollection ? [] : this.props.collection, shift: false, indicatorCount: 0};
+        this.state = {data: this.props.dbCollection ? [] : this.props.collection, shift: this.props.collection
+                ? this.props.collection.length % 2 === 0 : false, indicatorCount: 0};
         this.getCollections();
         // For instances that do not require data from a database,
         // make use of the default parameters. Otherwise, these
         // will be automatically updated after the call to the getCollection function
-        this.itemCount = 3;
-        this.maxSeek = this.props.seekWidth;
-        this.minSeek = -this.props.seekWidth;
+        this.itemCount = this.props.collection.length || 3;
+        this.maxSeek = this.itemCount % 2 === 0 ? this.props.seekWidth *
+            (Math.floor(this.itemCount / 2) - 1) : this.props.seekWidth * (Math.floor(this.itemCount / 2));
+        this.minSeek = -this.props.seekWidth * (Math.floor(this.itemCount / 2));
         this.currSeek = 0;
         this.currIndicator = 1;
         this.watchCarousel = React.createRef();
         this.container = this.props.enableCarouselMode ? 'carousel-container' : 'card-container';
-        this.additionalClasses = this.props.enableCarouselMode ? 'overflow-hidden p-relative' : '';
+        this.additionalClasses = this.props.enableCarouselMode ? 'overflow-hidden-mobile p-relative' : '';
         this.carouselIndicators = [];
         this.handleRightArrowClick = this.handleRightArrowClick.bind(this);
         this.handleLeftArrowClick = this.handleLeftArrowClick.bind(this);
@@ -29,8 +31,10 @@ export default class CardGrid extends Component {
         this.makeIndicators(0);
     }
 
+
+
     makeIndicators(count) {
-        const indicatorCount = this.props.dbCollection ? count : 3;
+        const indicatorCount = this.props.dbCollection ? count : this.props.collection.length;
         const setActive = indicatorCount % 2 === 0 ? (Math.floor(indicatorCount / 2)) - 1 :
             Math.floor(indicatorCount / 2);
         if (this.props.enableCarouselMode) {
@@ -112,6 +116,8 @@ export default class CardGrid extends Component {
                                           showDesc={this.props.showCardDesc}
                                           shift={this.state.shift}
                                           hoverEffect={this.props.cardHoverEffect}
+                                          headerTransform={this.props.cardHeaderTransform}
+                                          descTransform={this.props.cardContentTransform}
                                           key={i}/>
                         ))
                     }
@@ -144,7 +150,9 @@ CardGrid.propTypes = {
     collection: PropTypes.array,
     seekWidth: PropTypes.number,
     cardHoverEffect: PropTypes.string,
-    indicatorName: PropTypes.string
+    indicatorName: PropTypes.string,
+    cardContentTransform: PropTypes.string,
+    cardHeaderTransform: PropTypes.string
 };
 
 CardGrid.defaultProps = {
@@ -154,10 +162,14 @@ CardGrid.defaultProps = {
     showCardDesc: true,
     enableCarouselMode: false,
     seekWidth: 340,
-    cardHoverEffect: 'zoom'
+    cardHoverEffect: 'zoom',
+    collection: []
 };
 
-render(<CardGrid dbCollection={'collections'}/>, document.getElementById('featured-collections'));
-render(<CardGrid dbCollection={'watches'} cardContentOrder={'reverse'} cardImageSize={'small'} showCardDesc={false}
-                 enableCarouselMode={true} indicatorName={'watch'}/>,
-    document.getElementById('featured-watches'));
+const collections = document.getElementById('featured-collections');
+const watches = document.getElementById('featured-watches');
+if (collections && watches) {
+    render(<CardGrid dbCollection={'collections'}/>, collections);
+    render(<CardGrid dbCollection={'watches'} cardContentOrder={'reverse'} cardImageSize={'small'} showCardDesc={false}
+                     enableCarouselMode={true} indicatorName={'watch'}/>, watches);
+}

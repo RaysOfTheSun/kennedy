@@ -17,6 +17,7 @@ window.onload = () => {
 
     window.onscroll = () => {
         const nav = document.querySelector('.kenny-nav');
+        const navBody = document.querySelector('.kenny-nav-body');
         if (window.scrollY > 100) {
             nav.classList.remove('kenny-nav-landed');
         } else {

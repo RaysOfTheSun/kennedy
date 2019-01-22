@@ -43,16 +43,37 @@
   }
 }
 
+.text-align-center-mobile {
+  text-align: center;
+  @include respond-to(tablet-portrait-up) {
+    text-align: left;
+  }
+}
+
 /* Sizing */
 .text-emphasize {
-  font-size: 4rem;
+  font-size: 4rem !important;
   @include respond-to(desktop-up) {
     font-size: 6.5rem;
   }
 }
 
 .text-emphasize-medium {
-  font-size: 3rem;
+  font-size: 3rem !important;
+}
+
+.text-emphasize-alt {
+  font-size: 2rem !important;
+  @include respond-to(desktop-up) {
+    font-size: 4rem !important;
+  }
+}
+
+.text-invert-mobile {
+  color: black;
+  @include respond-to(tablet-landscape-up) {
+    color: white;
+  }
 }
 
 .section-header {

@@ -1,13 +1,28 @@
 @import "../globals";
 
+.kenny-nav-fixed {
+  position: relative;
+}
+
 .kenny-nav-landed {
   @include respond-to(desktop-up) {
+    &:hover {
+      background-color: black;
+    }
     & .nav-header {
       background-color: transparent !important;
+      flex: 1 0 40%;
     }
     & .kenny-nav-body {
       background-color: transparent !important;
-      transform: translate3d(0, -136px, 0) !important;
+      position: relative !important;
+      width: 100% !important;
+      flex: 1 0 60%;
+
+      & .navigation-mega-container {
+        left: 0 !important;
+        transform: translate3d(-40%, 0, 0) !important;
+      }
     }
   }
 }
@@ -31,6 +46,7 @@
   width: 100%;
   top: 0;
   z-index: 1;
+
   @include respond-to(desktop-up) {
     position: fixed;
   }
@@ -63,7 +79,8 @@
     height: 100vh;
     width: 100vw;
     background-color: black;
-    transition: background-color 0.4s ease-in-out, width 0.4s ease-in-out, transform 0.3s ease-in-out;
+    transition: background-color 0.4s ease-in-out, width 0.4s ease-in-out, transform 0.3s ease-in-out,
+    opacity 0.4s ease-in-out;
     transform: translate3d(-100%, 0, 0);
     z-index: 1;
 

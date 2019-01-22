@@ -21,12 +21,17 @@
   padding: 50px 0;
 }
 
+.border-right-1 {
+  border-right: 1px solid black;
+}
+
 .border-right-1-desk {
   border-right: none;
   @include respond-to(desktop-up) {
     border-right: 1px solid $color-second-level-link;
   }
 }
+
 .border-left-1-desk {
   border-right: none;
   @include respond-to(desktop-up) {
@@ -35,10 +40,19 @@
 }
 
 
-
 /* Positioning Wrappers */
 .p-relative {
   position: relative;
+}
+
+.pos-abs-center-desk {
+  @include respond-to(tablet-landscape-up) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 
@@ -64,10 +78,38 @@
   flex: 1 0 50%;
 }
 
+.flex-grow-desk {
+  flex: initial;
+  @include respond-to(desktop-up) {
+    flex: 1 0 50%;
+  }
+}
+
 .flex-mobile-column {
   flex-direction: column;
   @include respond-to(desktop-up) {
     flex-direction: row;
+  }
+}
+
+.flex-mobile-column-alt {
+  flex-direction: column;
+  @include respond-to(tablet-landscape-up) {
+    flex-direction: row;
+  }
+}
+
+.order-1-mobile {
+  order: 1;
+  @include respond-to(tablet-landscape-up) {
+    order: 0;
+  }
+}
+
+.order-0-mobile  {
+  order: 0;
+  @include respond-to(tablet-landscape-up) {
+    order: 1;
   }
 }
 
@@ -102,22 +144,39 @@
     width: 70%;
   }
   @include respond-to(desktop-up) {
-    width: 50%;
-  }
-  @include respond-to(big-desktop-up) {
     width: 25%;
   }
 }
 
 /* Containers */
 .kenny-container {
+  width: 100%;
   max-width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 0;
+  padding-right: 0;
   margin: 0;
   @include respond-to(desktop-up) {
     max-width: 1140px;
     margin: 0 auto;
+  }
+}
+
+.kenny-container-80 {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  @include respond-to(desktop-up) {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.flex-mobile-center {
+  justify-content: center;
+  align-items: center;
+  @include respond-to(desktop-up) {
+    justify-content: flex-start;
+    align-items: stretch;
   }
 }
 
@@ -167,6 +226,7 @@
       background-color: black;
       padding: 20px;
       transition: transform 0.3s ease-in-out;
+
       &:hover {
         transform: scale3d(1.1, 1.1, 1.1);
       }
@@ -297,5 +357,19 @@
   display: flex;
   @include respond-to(desktop-up) {
     display: none;
+  }
+}
+
+.display-inline-mobile-none {
+  display: none;
+  @include respond-to(tablet-landscape-up) {
+    display: inline-block;
+  }
+}
+
+.overflow-hidden-mobile {
+  overflow: hidden;
+  @include respond-to(desktop-up) {
+    overflow: initial;
   }
 }

@@ -1,0 +1,1 @@
+import './assets/styles/mens-index.scss';

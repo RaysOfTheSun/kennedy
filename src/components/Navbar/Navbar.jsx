@@ -28,15 +28,17 @@ class Navbar extends Component {
                         </div>
                     </div>
                     <div className="d-flex justify-content-center align-items-center font-righteous link-plain">
-                        <h1 className="mr-3"><a href="#" className="text-white">KENNEDY</a></h1>
-                        <h2>
-                            <i className="far fa-gem"/>
-                        </h2>
+                        <a href={'/'} className={'d-flex justify-content-center align-items-center'}>
+                            <h1 className="mr-3">KENNEDY</h1>
+                            <h2>
+                                <i className="far fa-gem"/>
+                            </h2>
+                        </a>
                     </div>
                 </div>
                 <div className={'kenny-nav-body flex-mobile-column'} ref={this.navRef}>
                     <div className={'kenny-nav-item link-plain'}>
-                        <a href="#" className="navigation-primary-link">Men's Watches</a>
+                        <a href="/mens-watches" className="navigation-primary-link">Men's Watches</a>
                         <div
                             className="navigation-mega-container flex-mobile-column d-flex">
                             <div className={'nav-item-container flex-mobile-column flex-mobile-column'}>
