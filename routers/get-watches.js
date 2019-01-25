@@ -7,5 +7,6 @@ mongoose.Promise = global.Promise;
 mongoose.connect(connString, {useNewUrlParser: true});
 
 router.get('/featured', controller.getFeatured);
+router.get('/new', controller.getNew);
 
 module.exports = router;

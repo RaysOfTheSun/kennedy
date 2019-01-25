@@ -31,8 +31,6 @@ export default class CardGrid extends Component {
         this.makeIndicators(0);
     }
 
-
-
     makeIndicators(count) {
         const indicatorCount = this.props.dbCollection ? count : this.props.collection.length;
         const setActive = indicatorCount % 2 === 0 ? (Math.floor(indicatorCount / 2)) - 1 :

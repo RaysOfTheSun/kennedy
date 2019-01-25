@@ -7,3 +7,7 @@
 {name:"Quis", image:"/images/w02.webp" , desc:"Etiam vel pretium lorem." , size:40 , collection:"Elegance", featured:true}
 {name:"Purus", image:"/images/w05.webp" , desc:"Nulla bibendum faucibus porta. " , size:40 , collection:"Smart & Casual", featured:true}
 {name:"Ornare", image:"/images/w04.webp" , desc:" Nam quis congue nibh" , size:36 , collection:"Citizen", featured:true}
+{name: "Morbi" , image: "/images/w07.jpg" , desc: "Fusce quis efficitur justo. Nunc eleifend posuere libero quis rutrum.", size: 42 , featured: false , group: "Citizen", new: true, category: "men"},
+{name: "Maximus", image: "/images/w08.jpg", desc: "Phasellus at pharetra arcu. Nam eu ornare orci.", size: 42 , featured: false , group: "Citizen", new: true, category: "men"},
+{name: "Scelerisque", image: "/images/w09.jpg", desc: "Cras luctus orci nec ex rutrum interdum." , size: 42 , featured: false , group: "Citizen", new: true, category: "men"},
+{name: "Nisi", image: "/images/w10.jpg", desc: "Nulla sit amet vestibulum erat, in sollicitudin metus." , size: 37 , featured: false , group: "Citizen" , new: true, category: "men"}

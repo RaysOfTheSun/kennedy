@@ -78,6 +78,13 @@
   flex: 1 0 50%;
 }
 
+.flex-grow-desk-30 {
+  flex: 1 0 auto;
+  @include respond-to(tablet-landscape-up) {
+    flex: 1 0 30%;
+  }
+}
+
 .flex-grow-desk {
   flex: initial;
   @include respond-to(desktop-up) {
@@ -97,6 +104,12 @@
   @include respond-to(tablet-landscape-up) {
     flex-direction: row;
   }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .order-1-mobile {

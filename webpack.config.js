@@ -7,7 +7,7 @@ module.exports = {
     entry: {
         main: ['./src/components/Navbar/Navbar.jsx', './src/main.js'],
         index: ['./src/components/CardGrid/CardGrid.jsx', './src/components/DiscoverGrid/DiscoverGrid.jsx'],
-        mens: ['./src/mens.js', './src/components/MensDiscoverGrid/MensDiscoverGrid.jsx']
+        mens: ['./src/mens.js', './src/components/MensDiscoverGrid/MensDiscoverGrid.jsx', './src/components/BannerCarousel/BannerCarousel.jsx']
     },
     output: {
         path: path.join(DIST_DIR, 'app'),
