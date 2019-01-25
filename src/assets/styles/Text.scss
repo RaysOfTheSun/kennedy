@@ -45,7 +45,7 @@
 
 .text-align-center-mobile {
   text-align: center;
-  @include respond-to(tablet-portrait-up) {
+  @include respond-to(tablet-landscape-up) {
     text-align: left;
   }
 }

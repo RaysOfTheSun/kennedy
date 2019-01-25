@@ -112,6 +112,8 @@
   align-items: center;
 }
 
+
+
 .order-1-mobile {
   order: 1;
   @include respond-to(tablet-landscape-up) {
