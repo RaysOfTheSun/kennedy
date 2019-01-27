@@ -12,4 +12,13 @@ router.get('/womens-watches', (req, res) => {
    res.render('womens-home', {title: "Kennedy | Women's Watches"});
 });
 
+router.get('/bags', (req, res) => {
+    res.render('bags-home', {title: "Kennedy | Bags"});
+});
+
+router.get('/clothing', (req, res) => {
+    res.render('clothing-home', {title: "Kennedy | Clothing & Accessories"});
+});
+
+
 module.exports = router;

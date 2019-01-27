@@ -5,6 +5,7 @@
 }
 
 .kenny-nav-landed {
+  transition: background-color 0.3s ease-in-out;
   @include respond-to(desktop-up) {
     & .navigation-primary-link {
       border-bottom: thin solid transparent  !important;

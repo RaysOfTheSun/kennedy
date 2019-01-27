@@ -33,10 +33,4 @@
   @include respond-to(tablet-portrait-up) {
     width: 100%;
   }
-  @include respond-to(desktop-up) {
-    width: 600px;
-  }
-  @include respond-to(big-desktop-up) {
-    width: 900px;
-  }
 }

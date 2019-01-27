@@ -111,7 +111,7 @@ class Navbar extends Component {
                         </div>
                     </div>
                     <div className={'kenny-nav-item link-plain'}>
-                        <a href="#" className="navigation-primary-link">Bags</a>
+                        <a href="/bags" className="navigation-primary-link">Bags</a>
                         <div
                             className="navigation-mega-container flex-mobile-column">
                             <div className={'nav-item-container flex-mobile-column'}>
@@ -151,7 +151,7 @@ class Navbar extends Component {
                         </div>
                     </div>
                     <div className={'kenny-nav-item link-plain'}>
-                        <a href="#" className="navigation-primary-link">Clothing & Accessories</a>
+                        <a href="/clothing" className="navigation-primary-link">Clothing & Accessories</a>
                         <div
                             className="navigation-mega-container flex-mobile-column">
                             <div className={'nav-item-container flex-mobile-column'}>

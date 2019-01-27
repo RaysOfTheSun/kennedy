@@ -47,6 +47,19 @@
   }
 }
 
+.bags-banner-image {
+  background-image: url("/images/bg-06s.jpg");
+  background-position: center;
+
+  @include respond-to(desktop-up) {
+    background-image: url("/images/bg-06t.jpg");
+  }
+}
+
+.clothing-banner-image {
+  background-image: url("/images/bg-07t.jpg");
+}
+
 .nav-banner {
   display: flex;
   justify-content: center;
