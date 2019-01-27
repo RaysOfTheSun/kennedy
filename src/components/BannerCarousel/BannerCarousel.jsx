@@ -33,7 +33,7 @@ export default class BannerCarousel extends Component {
     }
 
     async GetCollections() {
-        const collections = await fetch(`/get-${this.props.dbCollection}/${this.props.dbCollectionTarget}`,
+        const collections = await fetch(`/get-${this.props.dbCollection}/${this.props.dbCollectionTarget}?${this.props.searchField}=${this.props.searchFieldValue}`,
             {method: 'GET'}).then(res => res.json());
         this.setState({data: collections, itemCount: collections.length});
     }
@@ -94,7 +94,13 @@ export default class BannerCarousel extends Component {
 }
 
 const mensContainer = document.getElementById('mens-new-arrival');
+const womensContainer = document.getElementById('womens-new-arrival');
 if (mensContainer) {
-    render(<BannerCarousel dbCollection={'watches'} dbCollectionTarget={'new'} title={'new arrivals'}/>,
+    render(<BannerCarousel dbCollection={'watches'} dbCollectionTarget={'new'} searchField={'category'}
+                           searchFieldValue={'men'} title={'new arrivals'}/>,
         mensContainer);
+} else if (womensContainer) {
+    render(<BannerCarousel dbCollection={'watches'} dbCollectionTarget={'new'} searchField={'category'}
+                           searchFieldValue={'women'} title={'new arrivals'}/>,
+        womensContainer);
 }

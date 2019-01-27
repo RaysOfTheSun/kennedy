@@ -9,7 +9,7 @@ module.exports.getFeatured = (req, res) => {
 };
 
 module.exports.getNew = (req, res) => {
-    collection.find({new: true}, 'name image size', (err, result) => {
+    collection.find({new: true, category: req.query.category}, 'name image size', (err, result) => {
         if (err) throw err;
         res.send(result);
     });

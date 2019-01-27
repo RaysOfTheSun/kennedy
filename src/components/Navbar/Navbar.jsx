@@ -74,7 +74,7 @@ class Navbar extends Component {
                         </div>
                     </div>
                     <div className={'kenny-nav-item link-plain'}>
-                        <a href="#" className="navigation-primary-link">Women's Watches</a>
+                        <a href="/womens-watches" className="navigation-primary-link">Women's Watches</a>
                         <div
                             className="navigation-mega-container flex-mobile-column">
                             <div className={'nav-item-container flex-mobile-column'}>

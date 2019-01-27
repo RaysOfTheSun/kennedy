@@ -36,4 +36,8 @@ const MensDiscoveryGrid = () => {
                      cardContentTransform={'none'}/>
 };
 
-render(<MensDiscoveryGrid/>, document.getElementById('mens-discovery'));
+const menContainer = document.getElementById('mens-discovery');
+
+if (menContainer) {
+    render(<MensDiscoveryGrid/>, menContainer);
+}
