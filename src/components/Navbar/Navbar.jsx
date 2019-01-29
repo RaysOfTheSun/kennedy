@@ -30,7 +30,7 @@ class Navbar extends Component {
                     <div className="d-flex justify-content-center align-items-center font-righteous link-plain">
                         <a href={'/'} className={'d-flex justify-content-center align-items-center'}>
                             <h1 className="mr-3">KENNEDY</h1>
-                            <h2>
+                            <h2 className={'color-logo'}>
                                 <i className="far fa-gem"/>
                             </h2>
                         </a>
