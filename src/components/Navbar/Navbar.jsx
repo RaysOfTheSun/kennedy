@@ -38,7 +38,6 @@ class Navbar extends Component {
                 </div>
                 <div className={'kenny-nav-body flex-mobile-column'} ref={this.navRef}>
                     <div className={'kenny-nav-item link-plain'}>
-                        <a href="/mens-watches" className="navigation-primary-link">Men's Watches</a>
                         <div
                             className="navigation-mega-container flex-mobile-column d-flex">
                             <div className={'nav-item-container flex-mobile-column flex-mobile-column'}>
@@ -72,9 +71,9 @@ class Navbar extends Component {
                                 </div>
                             </div>
                         </div>
+                        <a href="/mens-watches" className="navigation-primary-link">Men's Watches</a>
                     </div>
                     <div className={'kenny-nav-item link-plain'}>
-                        <a href="/womens-watches" className="navigation-primary-link">Women's Watches</a>
                         <div
                             className="navigation-mega-container flex-mobile-column">
                             <div className={'nav-item-container flex-mobile-column'}>
@@ -109,13 +108,13 @@ class Navbar extends Component {
                                 </div>
                             </div>
                         </div>
+                        <a href="/womens-watches" className="navigation-primary-link">Women's Watches</a>
                     </div>
                     <div className={'kenny-nav-item link-plain'}>
-                        <a href="/bags" className="navigation-primary-link">Bags</a>
                         <div
                             className="navigation-mega-container flex-mobile-column">
                             <div className={'nav-item-container flex-mobile-column'}>
-                                <div className="navigation-mega-menu d-flex flex-column pr-lg-5 mr-lg-3">
+                                <div className="navigation-mega-menu d-flex flex-column pr-lg-5 mr-lg-3 ml-lg-auto">
                                     <span className="navigation-mega-menu-header">
                                       <a href="#" className="transform-none">Gear Guide</a>
                                     </span>
@@ -149,13 +148,13 @@ class Navbar extends Component {
                                 </div>
                             </div>
                         </div>
+                        <a href="/bags" className="navigation-primary-link">Bags</a>
                     </div>
                     <div className={'kenny-nav-item link-plain'}>
-                        <a href="/clothing" className="navigation-primary-link">Clothing & Accessories</a>
                         <div
                             className="navigation-mega-container flex-mobile-column">
                             <div className={'nav-item-container flex-mobile-column'}>
-                                <div className="navigation-mega-menu d-flex pr-lg-5 mr-lg-3">
+                                <div className="navigation-mega-menu d-flex pr-lg-5 mr-lg-3 ml-lg-auto">
                                     <span className="navigation-mega-menu-header">
                                       <a href="#" className="transform-none">Best Sellers</a>
                                     </span>
@@ -195,6 +194,7 @@ class Navbar extends Component {
                                 </div>
                             </div>
                         </div>
+                        <a href="/clothing" className="navigation-primary-link">Clothing & Accessories</a>
                     </div>
                 </div>
             </div>

@@ -112,6 +112,12 @@
           @include respond-to(desktop-up) {
             visibility: visible;
             opacity: 1;
+            & ~ .navigation-primary-link {
+              border-bottom: 2px solid white;
+              &:after {
+                transform: translate3d(90%, -50%, 0) rotate3d(0, -1, 0, 180deg);
+              }
+            }
           }
         }
       }
