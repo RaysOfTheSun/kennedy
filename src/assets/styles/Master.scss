@@ -10,6 +10,7 @@ html,
 body {
   font-size: 12px !important;
   font-family: $font-open-sans !important;
+  background-color: $dirty-white !important;
 }
 
 .footer-icons {
@@ -20,7 +21,7 @@ body {
   padding: 50px 0;
 }
 
-.footer-nav {
+.footer-nav {;
   width: 100%;
   display: flex;
   & .footer-pipe {

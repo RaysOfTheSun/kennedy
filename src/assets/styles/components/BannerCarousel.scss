@@ -1,0 +1,95 @@
+@import "../globals";
+
+.banner-carousel-header {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.banner-carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  overflow-x: scroll;
+  transform: none;
+
+  & > .banner-carousel-container-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 !important;
+    transform: translate3d(80%, 0px, 0px);
+    transition: transform 0.4s ease-in-out;
+    max-width: 100%;
+    @include respond-to(tablet-portrait-up) {
+      transform: translate3d(15%, 0, 0);
+    }
+    @include respond-to(desktop-up) {
+      transform: translate3d(0, 0, 0);
+    }
+
+    & > .banner-carousel-item {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      cursor: pointer;
+
+      & .quick-link {
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+      }
+
+      & > img {
+        width: 180px;
+        height: auto;
+        @include respond-to(desktop-up) {
+          width: 200px;
+        }
+      }
+
+      &:hover {
+        & > .quick-link {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @include respond-to(desktop-up) {
+    overflow: hidden;
+  }
+}
+
+.carousel-arrow-container {
+  position: absolute;
+  background-color: black;
+  padding: 20px;
+  z-index: 1;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  color: white;
+  display: none;
+  &:hover {
+    transform: scale(1.2);
+    background-color: #242424;
+  }
+  @include respond-to(tablet-landscape-up) {
+    display: flex;
+  }
+}
+
+.arrow-right {
+  right: 0;
+}
+
+.arrow-left {
+  left: 0;
+}
+
+.arrow-inactive {
+  opacity: 0.3;
+  transform: none !important;
+}

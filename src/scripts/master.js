@@ -13,10 +13,15 @@ window.onload = () => {
         for (let i = 0; i < footerTogglers.length; i++) {
             footerTogglers[i].addEventListener('click', handleClick)
         }
-    } else {
-        const footerTogglers = document.getElementsByClassName('footer-toggle');
-        for (let i = 0; i < footerTogglers.length; i++) {
-            footerTogglers[i].removeEventListener('click', handleClick);
+    }
+
+    window.onscroll = () => {
+        const nav = document.querySelector('.kenny-nav');
+        const navBody = document.querySelector('.kenny-nav-body');
+        if (window.scrollY > 100) {
+            nav.classList.remove('kenny-nav-landed');
+        } else {
+            nav.classList.add('kenny-nav-landed');
         }
     }
 };

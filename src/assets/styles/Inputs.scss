@@ -1,3 +1,5 @@
+@import "globals";
+
 .btn-input-lg {
   padding: 20px;
   cursor: pointer;
@@ -10,5 +12,36 @@
   &:hover {
     color: black !important;
     background-color: white;
+  }
+}
+
+.btn-black {
+  border: thin solid black;
+  transition: background-color 0.3s ease-in-out;
+  background-color: black;
+  color: white;
+  &:hover {
+    color: white !important;
+    background-color: #242424;
+  }
+}
+
+.btn-outline-dark-mobile {
+  color: black !important;
+  border: thin solid black !important;
+  transition: background-color 0.3s ease-in-out;
+  &:hover {
+    color: white !important;
+    background-color: black;
+  }
+
+  @include respond-to(desktop-up) {
+    color: white !important;
+    border: thin solid white !important;
+    transition: background-color 0.3s ease-in-out;
+    &:hover {
+      color: black !important;
+      background-color: white;
+    }
   }
 }

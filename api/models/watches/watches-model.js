@@ -19,6 +19,12 @@ const watchesSchema = new MongooseSchema({
     },
     featured: {
         type: MongooseSchema.Types.Boolean
+    },
+    new: {
+        type: MongooseSchema.Types.Boolean
+    },
+    category: {
+        type: MongooseSchema.Types.String
     }
 });
 
