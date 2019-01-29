@@ -5,10 +5,10 @@
 }
 
 .kenny-nav-landed {
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s linear;
   @include respond-to(desktop-up) {
     & .navigation-primary-link {
-      border-bottom: thin solid transparent  !important;
+      border-bottom: thin solid transparent !important;
 
       &:hover {
         border-bottom: thin solid white !important;
@@ -31,6 +31,17 @@
       & .navigation-mega-container {
         left: 0 !important;
         transform: translate3d(-40%, 0, 0) !important;
+
+        &:hover {
+          & ~ .navigation-primary-link {
+            border-bottom: 2px solid white !important;
+
+            &:after {
+              transform: translate3d(90%, -50%, 0) rotate3d(0, -1, 0, 180deg);
+            }
+          }
+        }
+
       }
     }
   }
@@ -54,7 +65,7 @@
   position: relative;
   width: 100%;
   top: 0;
-  z-index: 1;
+  z-index: 2;
 
   @include respond-to(desktop-up) {
     position: fixed;
@@ -112,6 +123,13 @@
           @include respond-to(desktop-up) {
             visibility: visible;
             opacity: 1;
+            & ~ .navigation-primary-link {
+              border-bottom: 2px solid white;
+
+              &:after {
+                transform: translate3d(90%, -50%, 0) rotate3d(0, -1, 0, 180deg);
+              }
+            }
           }
         }
       }

@@ -6,7 +6,7 @@ const favicon = require('serve-favicon');
 const app = express();
 
 // set our favicon
-app.use(favicon(path.join(__dirname, 'dist', 'app', 'images', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'dist', 'app', 'images', 'favicon-r.ico')));
 
 // setup our middleware
 app.use(bodyParser.urlencoded({extended: true}));

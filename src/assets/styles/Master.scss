@@ -104,3 +104,35 @@ body {
     }
   }
 }
+
+.sign-up-container {
+  padding: 0 20px;
+  @include respond-to(tablet-landscape-up) {
+    padding: 0;
+  }
+}
+
+.sign-up-field {
+  margin: 0 30px;
+  max-width: 100%;
+  @include respond-to(tablet-landscape-up) {
+    max-width: 320px;
+  }
+}
+
+.btn-sign-up-field {
+  min-width: 100%;
+  margin: 10px 0;
+  @include respond-to(tablet-landscape-up) {
+    margin: 0;
+    min-width: 128px;
+  }
+}
+
+.hover-scale {
+  transition: transform 0.3s ease-in-out;
+  transform: scale3d(1, 1, 1);
+  &:hover {
+    transform: scale3d(1.5, 1.5, 1.5);
+  }
+}
