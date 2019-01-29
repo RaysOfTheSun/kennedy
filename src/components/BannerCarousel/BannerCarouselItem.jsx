@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BannerCarouselItem = ({name, image, desc}) => {
+const BannerCarouselItem = ({name, image, desc, showWatchUnit}) => {
     return (
         <div className={'banner-carousel-item'}>
             <div className="quick-link flex-center">
@@ -10,7 +10,7 @@ const BannerCarouselItem = ({name, image, desc}) => {
             <div className={'d-flex justify-content-center align-items-center flex-column'}>
                 <h5>{name}</h5>
                 <h6 className={'text-muted'}>{desc}
-                <span className={'font-small text-uppercase'}> mm</span></h6>
+                    {showWatchUnit ? <span className={'font-small text-uppercase'}>mm</span> : undefined}</h6>
             </div>
         </div>
     )

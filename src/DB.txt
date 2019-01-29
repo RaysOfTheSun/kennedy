@@ -1,8 +1,8 @@
-// db.collections
-{ "_id" : ObjectId("5c371f4c1638dabf8021614a"), "name" : "Smart & Casual", "desc" : "Pellentesque et gravida ex, sit amet rutrum nibh. Sed at dui ac odio facilisis imperdiet.", "image" : "https://images.unsplash.com/photo-1516468956769-569d8a7e7ac2?ixlib=%20%20%20%20%20%20%20%20%20%20%20%20rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", "featured" : true }
-{ "_id" : ObjectId("5c3720d31638dabf8021614b"), "name" : "Citizen", "desc" : "Morbi nec libero dignissim, pretium neque molestie, sollicitudin quam.", "image" : "https://images.unsplash.com/photo-1507428861205-e8aab693190e?ixlib=%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1360&q=80", "featured" : true }
-{ "_id" : ObjectId("5c3720f41638dabf8021614c"), "name" : "Elegance", "desc" : "Curabitur vitae vestibulum augue, vel dignissim orci.", "image" : "https://images.unsplash.com/photo-1525342306245-c6a1e32087ce?ixlib=%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", "featured" : true }
-// db.watches
+// collections
+{ "name" : "Smart & Casual", "desc" : "Pellentesque et gravida ex, sit amet rutrum nibh. Sed at dui ac odio facilisis imperdiet.", "image" : "https://images.unsplash.com/photo-1516468956769-569d8a7e7ac2?ixlib=%20%20%20%20%20%20%20%20%20%20%20%20rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", "featured" : true }
+{ "name" : "Citizen", "desc" : "Morbi nec libero dignissim, pretium neque molestie, sollicitudin quam.", "image" : "https://images.unsplash.com/photo-1507428861205-e8aab693190e?ixlib=%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1360&q=80", "featured" : true }
+{ "name" : "Elegance", "desc" : "Curabitur vitae vestibulum augue, vel dignissim orci.", "image" : "https://images.unsplash.com/photo-1525342306245-c6a1e32087ce?ixlib=%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80", "featured" : true }
+// watches
 {name:"Ullamcorper", image:"/images/w03.webp" , desc:"Nunc varius mauris quis lacus convallis convallis", size:36 , collection:"Citizen", featured:true}
 {name:"Quis", image:"/images/w02.webp" , desc:"Etiam vel pretium lorem." , size:40 , collection:"Elegance", featured:true}
 {name:"Purus", image:"/images/w05.webp" , desc:"Nulla bibendum faucibus porta. " , size:40 , collection:"Smart & Casual", featured:true}
@@ -11,3 +11,14 @@
 {name: "Maximus", image: "/images/w08.jpg", desc: "Phasellus at pharetra arcu. Nam eu ornare orci.", size: 42 , featured: false , group: "Citizen", new: true, category: "men"},
 {name: "Scelerisque", image: "/images/w09.jpg", desc: "Cras luctus orci nec ex rutrum interdum." , size: 42 , featured: false , group: "Citizen", new: true, category: "men"},
 {name: "Nisi", image: "/images/w10.jpg", desc: "Nulla sit amet vestibulum erat, in sollicitudin metus." , size: 37 , featured: false , group: "Citizen" , new: true, category: "men"}
+// bags
+{name: "Integer", image: "/images/bp01.jpg", desc: "Nullam quis sagittis ipsum. Proin aliquet erat aliquet, hendrerit erat ut, egestas ipsum.", price: 53, featured: false, group: "Guerilla Tactics", new: true}
+{name: "Scelerisque", image: "/images/bp02.jpg", desc: "Vivamus mauris massa, fringilla ac semper sit amet.", price: 50, featured: false, group: "Star Wars", new: true}
+{name: "Suspendisse", image: "/images/bp03.jpg", desc: "Lorem sit amet, bibendum orci.", price: 57, featured: false, group: "Mutli Cam", new: true}
+{name: "Lobortis", image: "/images/bp04.jpg", desc: "Molestie massa, eu luctus mauris commodo et.", price: 50, featured: false, group: "Guerilla Tactics", new: true}
+{name: "Tristique", image: "/images/bp05.jpg", desc: "Integer at ultrices leo.", price: 80, featured: false, group: "Guerilla Tactics", new: true}
+{name: "Sapien Sed", image: "/images/bp06.jpg", desc: "Tellus. Integer scelerisque odio eu ipsum dapibus, at ultricies mi maximus.", price: 105, featured: false, group: "Guerilla Tactics", new: true}
+{name: "Duis", image: "/images/bp07.jpg", desc: "Nullam consectetur eu sem a efficitur.", price: 175, featured: true, group: "Guerilla Tactics", new: false}
+{name: "Arcu", image: "/images/bp08.jpg", desc: "Massa quis, interdum pellentesque augue.", price: 200, featured: true, group: "Guerilla Tactics", new: false}
+{name: "Rhoncus Augue", image: "/images/bp09.jpg", desc: "Porttitor metus rhoncus in.", price: 68, featured: true, group: "Guerilla Tactics", new: false}
+{name: "Aenean Quis Ex", image: "/images/bp10.jpg", desc: "Quis arcu. Donec eu facilisis metus. Integer enim est.", price: 150, featured: true, group: "Guerilla Tactics", new: false}
