@@ -112,7 +112,12 @@
   align-items: center;
 }
 
-
+.order-first-mobile {
+  order: -1;
+  @include respond-to(desktop-up) {
+    order: 0;
+  }
+}
 
 .order-1-mobile {
   order: 1;
@@ -374,6 +379,13 @@
   display: flex;
   @include respond-to(desktop-up) {
     display: none;
+  }
+}
+
+.display-mobile-none-b {
+  display: none;
+  @include respond-to(desktop-up) {
+    display: block;
   }
 }
 

@@ -33,7 +33,7 @@
         transform: translate3d(-40%, 0, 0) !important;
 
         &:hover {
-          & ~ .navigation-primary-link {
+          & ~ span > .navigation-primary-link {
             border-bottom: 2px solid white !important;
 
             &:after {
@@ -123,7 +123,7 @@
           @include respond-to(desktop-up) {
             visibility: visible;
             opacity: 1;
-            & ~ .navigation-primary-link {
+            & ~ span > .navigation-primary-link {
               border-bottom: 2px solid white;
 
               &:after {

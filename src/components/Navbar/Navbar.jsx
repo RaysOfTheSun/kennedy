@@ -63,15 +63,19 @@ class Navbar extends Component {
                                 <div className="navigation-mega-menu d-flex flex-column border-right-1-desk pr-5 mr-lg-3">
                                     <span className="navigation-mega-menu-header">Use</span>
                                 </div>
-                                <div className="navigation-mega-menu d-flex flex-column ml-0">
-                                    <a href="#" className="navigation-mega-menu-header transform-none">
+                                <div className="navigation-mega-menu d-flex flex-column ml-0 order-first-mobile">
+                                    <a href="/mens-watches" className="navigation-mega-menu-header transform-none">
                                         All Men's Watches
                                         <i className="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <a href="/mens-watches" className="navigation-primary-link">Men's Watches</a>
+                        <span>
+                            <p className={'display-mobile-flex navigation-primary-link'}>Men's Watches</p>
+                            <a href="/mens-watches" className="display-mobile-none-b navigation-primary-link">Men's Watches</a>
+                        </span>
+
                     </div>
                     <div className={'kenny-nav-item link-plain'}>
                         <div
@@ -100,15 +104,18 @@ class Navbar extends Component {
                                 <div className="navigation-mega-menu d-flex flex-column border-right-1-desk pr-5 mr-lg-3">
                                     <span className="navigation-mega-menu-header">Use</span>
                                 </div>
-                                <div className="navigation-mega-menu d-flex flex-column">
-                                    <a href="#" className="navigation-mega-menu-header transform-none">
+                                <div className="navigation-mega-menu d-flex flex-column order-first-mobile">
+                                    <a href="/womens-watches" className="navigation-mega-menu-header transform-none">
                                         All Women's Watches
                                         <i className="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <a href="/womens-watches" className="navigation-primary-link">Women's Watches</a>
+                        <span>
+                            <p className={'display-mobile-flex navigation-primary-link'}>Women's Watches</p>
+                            <a href="/womens-watches" className="display-mobile-none-b navigation-primary-link">Women's Watches</a>
+                        </span>
                     </div>
                     <div className={'kenny-nav-item link-plain'}>
                         <div
@@ -138,9 +145,9 @@ class Navbar extends Component {
                                 <div className="navigation-mega-menu d-flex flex-column pr-5 border-right-1-desk mr-lg-3">
                                     <span className="navigation-mega-menu-header">Specials</span>
                                 </div>
-                                <div className="navigation-mega-menu d-flex flex-column">
+                                <div className="navigation-mega-menu d-flex flex-column order-first-mobile">
                                     <span className="navigation-mega-menu-header">
-                                      <a href="#" className="transform-none">
+                                      <a href="/bags" className="transform-none">
                                         All Bags
                                         <i className="fas fa-arrow-right"></i>
                                       </a>
@@ -148,7 +155,10 @@ class Navbar extends Component {
                                 </div>
                             </div>
                         </div>
-                        <a href="/bags" className="navigation-primary-link">Bags</a>
+                        <span>
+                            <p className={'display-mobile-flex navigation-primary-link'}>Bags</p>
+                            <a href="/bags" className="display-mobile-none-b navigation-primary-link">Bags</a>
+                        </span>
                     </div>
                     <div className={'kenny-nav-item link-plain'}>
                         <div
@@ -184,9 +194,9 @@ class Navbar extends Component {
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="navigation-mega-menu d-flex">
+                                <div className="navigation-mega-menu d-flex order-first-mobile">
                                     <span className="navigation-mega-menu-header">
-                                      <a href="#" className="transform-none">
+                                      <a href="/clothing" className="transform-none">
                                         All Clothing & Accessories
                                         <i className="fas fa-arrow-right"></i>
                                       </a>
@@ -194,7 +204,10 @@ class Navbar extends Component {
                                 </div>
                             </div>
                         </div>
-                        <a href="/clothing" className="navigation-primary-link">Clothing & Accessories</a>
+                        <span>
+                            <p className={'display-mobile-flex navigation-primary-link'}>Clothing & Accessories</p>
+                            <a href="/clothing" className="display-mobile-none-b navigation-primary-link">Clothing & Accessories</a>
+                        </span>
                     </div>
                 </div>
             </div>
