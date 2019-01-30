@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
+import PropTypes from 'prop-types';
 import BannerCarouselItem from './BannerCarouselItem.jsx';
 
 export default class BannerCarousel extends Component {
@@ -119,3 +120,12 @@ if (mensContainer) {
                            searchFieldValue={'women'} title={'new arrivals'}/>,
         womensContainer);
 }
+
+BannerCarousel.prototypes = {
+    dbCollection: PropTypes.string,
+    dbCollectionTarget: PropTypes.string,
+    searchField: PropTypes.string,
+    searchFieldValue: PropTypes.string,
+    title: PropTypes.string
+};
+

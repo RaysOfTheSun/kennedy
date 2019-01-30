@@ -10,7 +10,9 @@ module.exports = {
         categoryIndex: ['./src/category-index.js', './src/components/MensDiscoverGrid/MensDiscoverGrid.jsx',
             './src/components/BannerCarousel/BannerCarousel.jsx', './src/components/WomensDiscoverGrid/WomensDiscoverGrid.jsx'],
         bags: ['./src/components/BagsFeaturedBannerCarousel/BagsFeaturedBannerCarousel.jsx',
-            './src/components/BagsNewArrivalBannerCarousel/BagsNewArrivalBannerCarousel.jsx']
+            './src/components/BagsNewArrivalBannerCarousel/BagsNewArrivalBannerCarousel.jsx'],
+        apparel: ['./src/components/HatsAndAccessoriesBannerCarousel/HatsAndAccessoriesBannerCarousel.jsx',
+            './src/components/ShirtsBannerCarousel/ShirtsBannerCarousel.jsx']
     },
     output: {
         path: path.join(DIST_DIR, 'app'),
