@@ -120,7 +120,6 @@
 
       &:hover {
         & > .navigation-mega-container {
-          transform: translate3d(0, 0, 0);
           @include respond-to(desktop-up) {
             visibility: visible;
             opacity: 1;
@@ -218,5 +217,14 @@
 }
 
 .kenny-nav-expanded {
+  transform: translate3d(0, 0, 0) !important;
+}
+
+.mega-menu-return-link {
+  cursor: pointer;
+  order: -2;
+}
+
+.navigation-mega-menu-expanded {
   transform: translate3d(0, 0, 0) !important;
 }

@@ -376,9 +376,9 @@
 }
 
 .display-mobile-flex {
-  display: flex;
+  display: flex !important;
   @include respond-to(desktop-up) {
-    display: none;
+    display: none !important;
   }
 }
 
