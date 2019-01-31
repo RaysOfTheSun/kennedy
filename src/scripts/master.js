@@ -1,6 +1,7 @@
 window.onload = () => {
     // make our content visible now that everything has been loaded up
     document.documentElement.classList.remove('no-flash');
+    const scrollContainer = document.querySelector('.scroll-up-container');
 
     // handlers for our footer
     function handleClick() {
@@ -15,13 +16,27 @@ window.onload = () => {
         }
     }
 
+
+    const scrollToTop = () => {
+        const c = document.documentElement.scrollTop || document.body.scrollTop;
+        if (c > 0) {
+            window.requestAnimationFrame(scrollToTop);
+            window.scrollTo(0, c - c / 8);
+        }
+    };
+
+    // click handler for our scroll to top button
+    scrollContainer.addEventListener('click', scrollToTop);
+
     window.onscroll = () => {
         const nav = document.querySelector('.kenny-nav');
         const navBody = document.querySelector('.kenny-nav-body');
         if (window.scrollY > 100) {
             nav.classList.remove('kenny-nav-landed');
+            scrollContainer.classList.add('scroll-up-container-shown');
         } else {
             nav.classList.add('kenny-nav-landed');
+            scrollContainer.classList.remove('scroll-up-container-shown');
         }
     }
 };
