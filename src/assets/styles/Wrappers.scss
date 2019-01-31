@@ -46,7 +46,7 @@
 }
 
 .pos-abs-center-desk {
-  @include respond-to(tablet-landscape-up) {
+  @include respond-to(desktop-up) {
     position: absolute;
     top: 0;
     right: 0;

@@ -75,7 +75,7 @@
 
 .text-invert-mobile {
   color: black;
-  @include respond-to(tablet-landscape-up) {
+  @include respond-to(desktop-up) {
     color: white;
   }
 }
