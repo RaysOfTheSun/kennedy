@@ -14,3 +14,10 @@ module.exports.getNew = (req, res) => {
         res.send(result);
     });
 };
+
+module.exports.GetWatch = (req, res) => {
+  collection.find({name: req.query.name}, (err, result) => {
+     if (err) throw err;
+     res.send(result);
+  });
+};

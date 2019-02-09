@@ -8,5 +8,6 @@ mongoose.connect(connString, {useNewUrlParser: true});
 
 router.get('/featured', controller.getFeatured);
 router.get('/new', controller.getNew);
+router.get('/watch', controller.GetWatch);
 
 module.exports = router;

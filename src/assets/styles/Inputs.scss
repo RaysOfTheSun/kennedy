@@ -26,6 +26,16 @@
   }
 }
 
+.btn-outline-black {
+  color: black;
+  background-color: transparent;
+  border: thin solid black;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
 .btn-outline-dark-mobile {
   color: black !important;
   border: thin solid black !important;

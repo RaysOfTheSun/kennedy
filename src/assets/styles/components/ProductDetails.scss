@@ -1,0 +1,205 @@
+@import "../globals";
+
+.product-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  transition: 0.3s transform ease-in-out;
+}
+
+.product-image-container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  @include respond-to(tablet-landscape-up) {
+    height: 700px;
+    width: 700px !important;
+  }
+  @include respond-to(desktop-up) {
+    overflow: initial;
+  }
+}
+
+.preview-container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  @include respond-to(desktop-up) {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & .product-preview-desc {
+    width: 100%;
+    text-align: center;
+    @include respond-to(tablet-portrait-up) {
+      text-align: left;
+    }
+    @include respond-to(desktop-up) {
+      flex: 1 0 50%;
+    }
+  }
+  & .product-preview-image {
+    /* Required when there is an even number of elements */
+    transform: translate3d(50%, 0, 0);
+    height: 375px;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > img {
+      height: auto;
+      width: 500px;
+      filter: drop-shadow(-.5em 3em 1.7em rgba(0,0,0,.6));
+      @include respond-to(tablet-portrait-up) {
+        width: auto;
+        overflow: initial;
+      }
+    }
+    @include respond-to(tablet-portrait-up) {
+      flex: 1 0 70%;
+      height: 700px;
+      max-width: 800px;
+    }
+    @include respond-to(tablet-landscape-up) {
+      flex: 1 0 55%;
+    }
+    @include respond-to(desktop-up) {
+      flex: 1 0 50%;
+    }
+  }
+}
+
+.product-preview-guarantee {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 20px 10px;
+  @include respond-to(tablet-portrait-up) {
+    margin: 20px 40px;
+  }
+  & > .guarantee-icon {
+    font-size: 3.5rem;
+  }
+  & > p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.technical-banner {
+  height: 100%;
+  max-height: 100%;
+  @include respond-to(tablet-landscape-up) {
+    height: 660px;
+    max-height: 660px;
+  }
+  @include respond-to(desktop-up) {
+    height: 750px;
+    max-height: 750px;
+  }
+  @include respond-to(big-desktop-up) {
+    height: 805px;
+    max-height: 805px;
+  }
+}
+
+.technical-data {
+  display: flex;
+  width: 100%;
+  flex: 1 0 50%;
+  padding: 20px;
+  @include respond-to(tablet-portrait-up) {
+    padding: 50px;
+  }
+}
+
+.technical-section-header {
+  margin: .2em 0 .8em;
+}
+
+.technical-data-item {
+  margin: 2px 0;
+}
+
+.technical-data-set-expanded {
+  & .spec-indicator {
+    transform: rotate(180deg);
+  }
+  & > .technical-data-set {
+    max-height: 700px;
+    margin: 3% 0 20%;
+  }
+}
+
+.technical-data-set {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out,
+  margin 0.3s ease-in-out;
+  & * {
+    font-size: 1.2rem;
+  }
+  @include respond-to(desktop-up) {
+    & * {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.technical-data-set-header {
+  margin: .4em 0 .09em;
+  padding-bottom: 4px;
+}
+
+.technical-data-header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: thin solid #333333;
+  cursor: pointer;
+}
+
+.techincal-data-header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: thin solid #333333;
+  cursor: pointer;
+}
+
+
+.technical-data-header {
+  min-width: 160px;
+  max-width: 160px;
+  padding: 0 0 .6em;
+}
+
+.technical-data-item {
+  padding: 0 0 .6em
+}
+
+.product-preview-input {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease-in-out;
+  @include respond-to(tablet-landscape-up) {
+    width: 60%;
+  }
+}

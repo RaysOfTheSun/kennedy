@@ -20,5 +20,9 @@ router.get('/clothing', (req, res) => {
     res.render('clothing-home', {title: "Kennedy | Clothing & Accessories"});
 });
 
+router.get('/products/:category/:product', (req, res) => {
+   res.render('product', {title: `Kennedy | ${req.params.product}`});
+});
+
 
 module.exports = router;
