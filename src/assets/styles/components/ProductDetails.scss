@@ -1,27 +1,6 @@
 @import "../globals";
 
-.product-images {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 0;
-  transition: 0.3s transform ease-in-out;
-}
-
-.product-image-container {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  @include respond-to(tablet-landscape-up) {
-    height: 700px;
-    width: 700px !important;
-  }
-  @include respond-to(desktop-up) {
-    overflow: initial;
-  }
-}
-
-.preview-container {
+.product-kenny-container {
   width: 100%;
   max-width: 100%;
   padding-left: 0;
@@ -47,6 +26,22 @@
       flex: 1 0 50%;
     }
   }
+
+  & .product-image-container {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    @include respond-to(tablet-landscape-up) {
+      height: 700px;
+      width: 700px !important;
+    }
+    flex: 1 0 auto;
+    position: relative;
+    @include respond-to(desktop-up) {
+      flex: 1 0 40%;
+    }
+  }
+
   & .product-preview-image {
     /* Required when there is an even number of elements */
     transform: translate3d(50%, 0, 0);
@@ -78,6 +73,44 @@
   }
 }
 
+.product-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  transition: 0.3s transform ease-in-out;
+}
+
+.product-arrow-container {
+  position: absolute;
+  padding: 20px;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 2rem;
+}
+
+.product-arrow-left {
+  left: 0;
+}
+
+.product-arrow-right {
+  right: 0;
+}
+
+.product-preview-input {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease-in-out;
+  @include respond-to(tablet-landscape-up) {
+    width: 60%;
+  }
+}
+
 .product-preview-guarantee {
   display: flex;
   justify-content: center;
@@ -99,8 +132,7 @@
 }
 
 .technical-banner {
-  height: 100%;
-  max-height: 100%;
+  height: auto;
   @include respond-to(tablet-landscape-up) {
     height: 660px;
     max-height: 660px;
@@ -113,93 +145,80 @@
     height: 805px;
     max-height: 805px;
   }
-}
 
-.technical-data {
-  display: flex;
-  width: 100%;
-  flex: 1 0 50%;
-  padding: 20px;
-  @include respond-to(tablet-portrait-up) {
-    padding: 50px;
-  }
-}
-
-.technical-section-header {
-  margin: .2em 0 .8em;
-}
-
-.technical-data-item {
-  margin: 2px 0;
-}
-
-.technical-data-set-expanded {
-  & .spec-indicator {
-    transform: rotate(180deg);
-  }
-  & > .technical-data-set {
-    max-height: 700px;
-    margin: 3% 0 20%;
-  }
-}
-
-.technical-data-set {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.3s ease-in-out,
-  margin 0.3s ease-in-out;
-  & * {
-    font-size: 1.2rem;
-  }
-  @include respond-to(desktop-up) {
-    & * {
-      font-size: 1.5rem;
+  & .technical-data {
+    display: flex;
+    width: 100%;
+    flex: 1 0 50%;
+    padding: 20px;
+    @include respond-to(tablet-portrait-up) {
+      padding: 50px;
     }
   }
-}
 
-.technical-data-set-header {
-  margin: .4em 0 .09em;
-  padding-bottom: 4px;
-}
+  & .technical-image {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 40%;
+    height: 0;
+    width: 100%;
+    align-self: center;
+  }
 
-.technical-data-header-container {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: thin solid #333333;
-  cursor: pointer;
-}
+  & .technical-section-header {
+    margin: .2em 0 .8em;
+  }
 
-.techincal-data-header-container {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: thin solid #333333;
-  cursor: pointer;
-}
+  & .technical-data-item {
+    margin: 2px 0;
 
+    & .technical-data-header-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: thin solid #333333;
+      cursor: pointer;
+    }
 
-.technical-data-header {
-  min-width: 160px;
-  max-width: 160px;
-  padding: 0 0 .6em;
+    & .technical-data-set {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease-in-out,
+      margin 0.3s ease-in-out;
+      & * {
+        font-size: 1.2rem;
+      }
+      @include respond-to(desktop-up) {
+        & * {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  & .technical-data-set-expanded {
+    & .spec-indicator {
+      transform: rotate(180deg);
+    }
+    & > .technical-data-set {
+      max-height: 700px;
+      margin: 3% 0 20%;
+    }
+  }
 }
 
 .technical-data-item {
   padding: 0 0 .6em
 }
 
-.product-preview-input {
-  width: 100%;
-  padding: 10px;
-  cursor: pointer;
-  text-align: center;
-  margin-bottom: 10px;
-  transition: background-color 0.3s ease-in-out;
-  @include respond-to(tablet-landscape-up) {
-    width: 60%;
+.technical-data-header {
+  min-width: 160px;
+  max-width: 160px;
+  padding: 0 0 .6em;
+  color: #6C757D;
+  & > * {
+    font-weight: bold;
   }
 }

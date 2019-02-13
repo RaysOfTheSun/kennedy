@@ -160,6 +160,13 @@
   }
 }
 
+.w-80-100 {
+  width: 100%;
+  @include respond-to(tablet-portrait-up) {
+    width: 80%;
+  }
+}
+
 .w-25-70-100 {
   width: 100%;
   @include respond-to(tablet-portrait-up) {
@@ -386,6 +393,13 @@
   display: flex !important;
   @include respond-to(desktop-up) {
     display: none !important;
+  }
+}
+
+.display-mobile-none-alt {
+  display: none;
+  @include respond-to(tablet-landscape-up) {
+    display: flex;
   }
 }
 
