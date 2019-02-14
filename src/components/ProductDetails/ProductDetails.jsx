@@ -6,10 +6,20 @@ class ProductDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {data: []};
+        this.imageContainerRef = React.createRef();
         this.specLabels = ['movement', 'case', 'dimensions', 'strap'];
         this.GetData = this.GetData.bind(this);
-        this.GetData();
         this.formatMoney = this.formatMoney.bind(this);
+        this.handleLeftScroll = this.handleLeftScroll.bind(this);
+        this.handleRightScroll = this.handleRightScroll.bind(this);
+        this.GetData();
+
+        // gallery scrolling variables
+        this.itemCount = 0;
+        this.seekWidth = 800;
+        this.currSeek = 0;
+        this.maxSeek = 0;
+        this.minSeek = 0;
     }
 
     async GetData() {
@@ -22,7 +32,12 @@ class ProductDetails extends Component {
 
         const [finalData] = collection;
 
-        this.setState({data: finalData});
+        this.setState({data: finalData}, () => {
+            this.itemCount = this.state.data.prevImage.length;
+            this.maxSeek = this.itemCount % 2 === 0 ? (Math.floor(this.itemCount / 2) - 1) * this.seekWidth :
+                Math.floor(this.itemCount / 2) * this.seekWidth;
+            this.minSeek = -this.seekWidth * (Math.floor(this.itemCount / 2));
+        });
     }
 
     formatMoney(n, c, d, t) {
@@ -39,13 +54,29 @@ class ProductDetails extends Component {
     static handleHeaderClick(e) {
         const dataContainer = document.querySelector(`[data-set=${e.currentTarget.getAttribute('data-target-set')}]`);
         const expandedDataSets = document.getElementsByClassName('technical-data-set-expanded');
-        for(let i = 0; i < expandedDataSets.length; i++) {
-            if(expandedDataSets[i].getAttribute('data-set') !== e.currentTarget.getAttribute('data-target-set')) {
+        for (let i = 0; i < expandedDataSets.length; i++) {
+            if (expandedDataSets[i].getAttribute('data-set') !== e.currentTarget.getAttribute('data-target-set')) {
                 expandedDataSets[i].classList.remove('technical-data-set-expanded');
             }
         }
 
         dataContainer.classList.toggle('technical-data-set-expanded');
+    }
+
+    handleLeftScroll() {
+        if (this.currSeek + this.seekWidth <= this.maxSeek) {
+            this.currSeek += this.seekWidth;
+        }
+
+        this.imageContainerRef.current.style.transform = `translate3d(${this.currSeek}px, 0, 0)`
+    }
+
+    handleRightScroll() {
+        if (this.currSeek - this.seekWidth >= this.minSeek) {
+            this.currSeek -= this.seekWidth;
+        }
+
+        this.imageContainerRef.current.style.transform = `translate3d(${this.currSeek}px, 0, 0)`
     }
 
     render() {
@@ -56,10 +87,10 @@ class ProductDetails extends Component {
                         <div className={'product-kenny-container product-container flex-mobile-column-alt'}>
                             <div
                                 className={'d-flex justify-content-center align-items-center product-image-container position-relative'}>
-                                <div className="product-arrow-container product-arrow-left">
+                                <div className={'product-arrow-container product-arrow-left'} onClick={this.handleLeftScroll}>
                                     <i className="fas fa-chevron-left"></i>
                                 </div>
-                                <div className={'product-images'}>
+                                <div className={'product-images'} ref={this.imageContainerRef}>
                                     {
                                         this.state.data.prevImage.map((imageName, i) => (
                                             <div className={'product-preview-image'}>
@@ -69,7 +100,7 @@ class ProductDetails extends Component {
                                         ))
                                     }
                                 </div>
-                                <div className="product-arrow-container product-arrow-right">
+                                <div className={'product-arrow-container product-arrow-right'} onClick={this.handleRightScroll}>
                                     <i className="fas fa-chevron-right"></i>
                                 </div>
                             </div>
@@ -120,8 +151,12 @@ class ProductDetails extends Component {
                                     Data</h1>
                                 {
                                     this.specLabels.map((specTitle, i) => (
-                                        <div className={`technical-data-item ${i === 0 ?' technical-data-set-expanded' : ''}`} data-set={`spec-${i + 1}`}>
-                                            <div className={'technical-data-header-container'} data-target-set={`spec-${i + 1}`} onClick={ProductDetails.handleHeaderClick}>
+                                        <div
+                                            className={`technical-data-item ${i === 0 ? ' technical-data-set-expanded' : ''}`}
+                                            data-set={`spec-${i + 1}`}>
+                                            <div className={'technical-data-header-container'}
+                                                 data-target-set={`spec-${i + 1}`}
+                                                 onClick={ProductDetails.handleHeaderClick}>
                                                 <h3 className={'text-uppercase font-weight-bold technical-data-set-header'}>{specTitle}</h3>
                                                 <i className="fas fa-chevron-down spec-indicator color-logo"></i>
                                             </div>
