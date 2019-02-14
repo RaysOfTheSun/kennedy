@@ -36,6 +36,18 @@ class ProductDetails extends Component {
         return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
     };
 
+    static handleHeaderClick(e) {
+        const dataContainer = document.querySelector(`[data-set=${e.currentTarget.getAttribute('data-target-set')}]`);
+        const expandedDataSets = document.getElementsByClassName('technical-data-set-expanded');
+        for(let i = 0; i < expandedDataSets.length; i++) {
+            if(expandedDataSets[i].getAttribute('data-set') !== e.currentTarget.getAttribute('data-target-set')) {
+                expandedDataSets[i].classList.remove('technical-data-set-expanded');
+            }
+        }
+
+        dataContainer.classList.toggle('technical-data-set-expanded');
+    }
+
     render() {
         if (this.state.data.length !== 0) {
             return (
@@ -108,8 +120,8 @@ class ProductDetails extends Component {
                                     Data</h1>
                                 {
                                     this.specLabels.map((specTitle, i) => (
-                                        <div className={`technical-data-item ${i === 0 ? 'technical-data-set-expanded' : ''}`} data-set={`spec-${i + 1}`}>
-                                            <div className={'technical-data-header-container'} data-target-set={`spec-${i + 1}`}>
+                                        <div className={`technical-data-item ${i === 0 ?' technical-data-set-expanded' : ''}`} data-set={`spec-${i + 1}`}>
+                                            <div className={'technical-data-header-container'} data-target-set={`spec-${i + 1}`} onClick={ProductDetails.handleHeaderClick}>
                                                 <h3 className={'text-uppercase font-weight-bold technical-data-set-header'}>{specTitle}</h3>
                                                 <i className="fas fa-chevron-down spec-indicator color-logo"></i>
                                             </div>
