@@ -30,8 +30,8 @@ window.onload = () => {
 
     window.onscroll = () => {
         const nav = document.querySelector('.kenny-nav');
-        const navBody = document.querySelector('.kenny-nav-body');
-        if (window.scrollY > 100) {
+        // const navBody = document.querySelector('.kenny-nav-body');
+        if (window.scrollY > 1) {
             nav.classList.remove('kenny-nav-landed');
             scrollContainer.classList.add('scroll-up-container-shown');
         } else {

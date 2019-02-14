@@ -83,6 +83,7 @@ class ProductDetails extends Component {
         if (this.state.data.length !== 0) {
             return (
                 <div className={'d-flex justify-content-center flex-column w-100'}>
+                    <div className={'align-self-stretch w-100 bg-black display-mobile-none'} style={{height: `${82}px`}}></div>
                     <div className={'d-flex justify-content-center align-items-center bg-light-grey'}>
                         <div className={'product-kenny-container product-container flex-mobile-column-alt'}>
                             <div
