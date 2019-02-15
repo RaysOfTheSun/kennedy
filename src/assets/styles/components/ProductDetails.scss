@@ -81,6 +81,14 @@
   transition: 0.3s transform ease-in-out;
 }
 
+.product-arrow-left-hidden {
+  transform: translate3d(-50px, 0, 0);
+}
+
+.product-arrow-right-hidden {
+  transform: translate3d(50px, 0, 0);
+}
+
 .product-arrow-container {
   position: absolute;
   padding: 20px;
@@ -89,6 +97,7 @@
   cursor: pointer;
   z-index: 1;
   font-size: 2rem;
+  transition: transform 0.3s ease-in-out;
 }
 
 .product-arrow-left {
@@ -220,5 +229,15 @@
   color: #6C757D;
   & > * {
     font-weight: bold;
+  }
+}
+
+.product-story {
+  padding: 40px !important;
+  @include respond-to(tablet-portrait-up) {
+    padding: 30px !important;
+  }
+  * {
+    font-size: 1.3rem;
   }
 }

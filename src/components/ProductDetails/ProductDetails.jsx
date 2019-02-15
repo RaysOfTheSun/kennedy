@@ -7,11 +7,14 @@ class ProductDetails extends Component {
         super(props);
         this.state = {data: []};
         this.imageContainerRef = React.createRef();
+        this.leftArrow = React.createRef();
+        this.rightArrow = React.createRef();
         this.specLabels = ['movement', 'case', 'dimensions', 'strap'];
         this.GetData = this.GetData.bind(this);
         this.formatMoney = this.formatMoney.bind(this);
         this.handleLeftScroll = this.handleLeftScroll.bind(this);
         this.handleRightScroll = this.handleRightScroll.bind(this);
+        this.toggleArrows = this.toggleArrows.bind(this);
         this.GetData();
 
         // gallery scrolling variables
@@ -63,12 +66,24 @@ class ProductDetails extends Component {
         dataContainer.classList.toggle('technical-data-set-expanded');
     }
 
+    toggleArrows() {
+        if (this.currSeek === this.minSeek)  {
+            this.rightArrow.current.classList.add('product-arrow-right-hidden');
+        } else if (this.currSeek === this.maxSeek) {
+            this.leftArrow.current.classList.add('product-arrow-left-hidden');
+        } else {
+            this.leftArrow.current.classList.remove('product-arrow-left-hidden');
+            this.rightArrow.current.classList.remove('product-arrow-right-hidden');
+        }
+    }
+
     handleLeftScroll() {
         if (this.currSeek + this.seekWidth <= this.maxSeek) {
             this.currSeek += this.seekWidth;
         }
 
-        this.imageContainerRef.current.style.transform = `translate3d(${this.currSeek}px, 0, 0)`
+        this.imageContainerRef.current.style.transform = `translate3d(${this.currSeek}px, 0, 0)`;
+        this.toggleArrows();
     }
 
     handleRightScroll() {
@@ -76,7 +91,8 @@ class ProductDetails extends Component {
             this.currSeek -= this.seekWidth;
         }
 
-        this.imageContainerRef.current.style.transform = `translate3d(${this.currSeek}px, 0, 0)`
+        this.imageContainerRef.current.style.transform = `translate3d(${this.currSeek}px, 0, 0)`;
+        this.toggleArrows();
     }
 
     render() {
@@ -88,7 +104,7 @@ class ProductDetails extends Component {
                         <div className={'product-kenny-container product-container flex-mobile-column-alt'}>
                             <div
                                 className={'d-flex justify-content-center align-items-center product-image-container position-relative'}>
-                                <div className={'product-arrow-container product-arrow-left'} onClick={this.handleLeftScroll}>
+                                <div className={'product-arrow-container product-arrow-left'} onClick={this.handleLeftScroll} ref={this.leftArrow}>
                                     <i className="fas fa-chevron-left"></i>
                                 </div>
                                 <div className={'product-images'} ref={this.imageContainerRef}>
@@ -101,7 +117,7 @@ class ProductDetails extends Component {
                                         ))
                                     }
                                 </div>
-                                <div className={'product-arrow-container product-arrow-right'} onClick={this.handleRightScroll}>
+                                <div className={'product-arrow-container product-arrow-right'} onClick={this.handleRightScroll} ref={this.rightArrow}>
                                     <i className="fas fa-chevron-right"></i>
                                 </div>
                             </div>
@@ -145,10 +161,19 @@ class ProductDetails extends Component {
                             <p>Gift Offered</p>
                         </div>
                     </div>
+                    <div className={'d-flex- justify-content-center align-items-center bg-white'}>
+                        <div className={'d-flex justify-content-center align-items-center flex-column kenny-container' +
+                        ' product-story text-desk-justify'}>
+                            <h2 className={'text-uppercase section-header font-weight-normal color-logo'}>The Story</h2>
+                            <p className={'section-desc w-75-100 transform-none'}>
+                                {this.state.data.story}
+                            </p>
+                        </div>
+                    </div>
                     <div className={'d-flex justify-content-center bg-black text-white technical-banner'}>
                         <div className={'product-kenny-container d-flex justify-content-center align-items-center'}>
                             <div className={'technical-data flex-column align-self-start'}>
-                                <h1 className={'font-weight-normal text-uppercase technical-section-header color-logo'}>Technical
+                                <h1 className={'font-weight-normal text-uppercase technical-section-header color-logo text-align-center-mobile'}>Technical
                                     Data</h1>
                                 {
                                     this.specLabels.map((specTitle, i) => (

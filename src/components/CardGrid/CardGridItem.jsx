@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CardGridItem = ({name, image, content, imageSize, contentOrder, showDesc, shift, hoverEffect,
-                          headerTransform, descTransform}) => {
+                          headerTransform, descTransform, generateLink, cardCategory}) => {
     let imageSizeClass = '';
     if (imageSize === 'small') {
         imageSizeClass = 'image-200-75p';
@@ -19,9 +19,10 @@ const CardGridItem = ({name, image, content, imageSize, contentOrder, showDesc, 
     const contentClass = contentOrder === 'reverse' ? 'card-content-header' : 'card-content-text';
     const shiftClass = shift ? ' kennedy-card-shift ' : ' ';
     const hoverEffectClass = hoverEffect === 'lights' ? ' kennedy-card-dark-to-light ' : '';
+    const cardLink = generateLink ? `/${cardCategory === 'watches' ? 'products/watches' : '' }/${name}` : '#';
     return (
-        <div className={`kennedy-card${shiftClass}${hoverEffectClass}link-plain`}>
-            <a className={''} href={'#'}>
+        <a className={`kennedy-card${shiftClass}${hoverEffectClass}link-plain`} href={cardLink}>
+            <div className={''}>
                 <div className={'card-image'}>
                     <img src={image} alt={name} className={imageSizeClass}/>
                 </div>
@@ -33,8 +34,8 @@ const CardGridItem = ({name, image, content, imageSize, contentOrder, showDesc, 
                         showDesc ? <p className={`${contentClass} ${descTransformClass} ${contentPosition}`}>{content}</p> : undefined
                     }
                 </div>
-            </a>
-        </div>
+            </div>
+        </a>
     )
 };
 

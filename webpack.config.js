@@ -13,7 +13,7 @@ module.exports = {
             './src/components/BagsNewArrivalBannerCarousel/BagsNewArrivalBannerCarousel.jsx'],
         apparel: ['./src/components/HatsAndAccessoriesBannerCarousel/HatsAndAccessoriesBannerCarousel.jsx',
             './src/components/ShirtsBannerCarousel/ShirtsBannerCarousel.jsx'],
-        productPrev : ['./src/components/ProductDetails/ProductDetails.jsx', './src/productPrev.js']
+        productPrev : ['./src/components/ProductDetails/ProductDetails.jsx', './src/components/WatchesCardGrid/WatchesCardGrid.jsx', './src/productPrev.js']
     },
     output: {
         path: path.join(DIST_DIR, 'app'),

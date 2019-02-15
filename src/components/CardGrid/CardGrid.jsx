@@ -116,6 +116,8 @@ export default class CardGrid extends Component {
                                           hoverEffect={this.props.cardHoverEffect}
                                           headerTransform={this.props.cardHeaderTransform}
                                           descTransform={this.props.cardContentTransform}
+                                          cardCategory={this.props.dbCollection}
+                                          generateLink={this.props.enableCardLink}
                                           key={i}/>
                         ))
                     }
@@ -150,7 +152,8 @@ CardGrid.propTypes = {
     cardHoverEffect: PropTypes.string,
     indicatorName: PropTypes.string,
     cardContentTransform: PropTypes.string,
-    cardHeaderTransform: PropTypes.string
+    cardHeaderTransform: PropTypes.string,
+    enableCardLink: PropTypes.bool
 };
 
 CardGrid.defaultProps = {
@@ -169,5 +172,5 @@ const watches = document.getElementById('featured-watches');
 if (collections && watches) {
     render(<CardGrid dbCollection={'collections'}/>, collections);
     render(<CardGrid dbCollection={'watches'} cardContentOrder={'reverse'} cardImageSize={'small'} showCardDesc={false}
-                     enableCarouselMode={true} indicatorName={'watch'}/>, watches);
+                     enableCarouselMode={true} indicatorName={'watch'} enableCardLink={true}/>, watches);
 }

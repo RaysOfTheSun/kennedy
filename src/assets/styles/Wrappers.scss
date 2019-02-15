@@ -435,12 +435,17 @@
   bottom: 20%;
   cursor: pointer;
   z-index: 2;
+  opacity: 0.65;
   -webkit-transform: translate3d(79px, 0, 0);
   -moz-transform: translate3d(79px, 0, 0);
   -ms-transform: translate3d(79px, 0, 0);
   -o-transform: translate3d(79px, 0, 0);
   transform: translate3d(79px, 0, 0);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .scroll-up-container-shown {
@@ -449,4 +454,11 @@
   -ms-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+}
+
+.text-desk-justify {
+  text-align: left;
+  @include respond-to(tablet-portrait-up) {
+    text-align: justify;
+  }
 }
