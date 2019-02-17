@@ -142,6 +142,7 @@
 
 .technical-banner {
   height: auto;
+  overflow: hidden;
   @include respond-to(tablet-landscape-up) {
     height: 660px;
     max-height: 660px;
@@ -213,7 +214,13 @@
     }
     & > .technical-data-set {
       max-height: 700px;
-      margin: 3% 0 20%;
+      margin: 3% 0 15%;
+      @include respond-to(tablet-landscape-up) {
+        margin: 3% 0 8%;
+      }
+      @include respond-to(big-desktop-up) {
+        margin: 3% 0 20%;
+      }
     }
   }
 }
