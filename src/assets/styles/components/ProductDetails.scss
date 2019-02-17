@@ -83,10 +83,12 @@
 
 .product-arrow-left-hidden {
   transform: translate3d(-50px, 0, 0);
+  cursor: default !important;
 }
 
 .product-arrow-right-hidden {
   transform: translate3d(50px, 0, 0);
+  cursor: default !important;
 }
 
 .product-arrow-container {
