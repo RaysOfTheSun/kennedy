@@ -1,5 +1,5 @@
-"use strict";
-
+import 'bootstrap';
+import 'jquery/dist/jquery.min';
 import './assets/styles/Master.scss';
 import './assets/styles/BackgroundColors.scss';
 import './assets/styles/Text.scss';
