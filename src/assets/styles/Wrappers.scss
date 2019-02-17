@@ -233,31 +233,6 @@
   transition: background-color 0.4s ease-in-out;
 }
 
-.arrow-container {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  height: 100%;
-  cursor: pointer;
-  z-index: 2;
-
-  & .arrow {
-    background-color: black;
-    padding: 20px;
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-      transform: scale3d(1.1, 1.1, 1.1);
-    }
-  }
-
-  @include respond-to(tablet-landscape-up) {
-    display: none;
-  }
-}
-
 .carousel-container {
   display: flex;
   align-items: center;
@@ -269,6 +244,31 @@
     margin: 0 auto;
     transform: translate3d(0, 0, 0) !important;
     & .indicator {
+      display: none;
+    }
+  }
+
+  .arrow-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+
+    & .arrow {
+      background-color: black;
+      padding: 20px;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale3d(1.1, 1.1, 1.1);
+      }
+    }
+
+    @include respond-to(tablet-landscape-up) {
       display: none;
     }
   }
