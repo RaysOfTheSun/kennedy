@@ -21,3 +21,10 @@ module.exports.GetWatch = (req, res) => {
      res.send(result);
   });
 };
+
+module.exports.GetAll = (req, res) => {
+  collection.find({}, (err, result) => {
+    if (err) throw err;
+    res.send(result);
+  });
+};

@@ -44,6 +44,7 @@ class ProductDetails extends Component {
     }
 
     formatMoney(n, c, d, t) {
+        // S.O. code
         c = isNaN(c = Math.abs(c)) ? 2 : c;
         d = d === undefined ? "." : d;
         t = t === undefined ? "," : t;

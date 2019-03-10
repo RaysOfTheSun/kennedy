@@ -95,6 +95,12 @@ class Navbar extends Component {
                                         <i className="fas fa-arrow-right pl-3"></i>
                                     </a>
                                 </div>
+                                <div className="navigation-mega-menu d-flex flex-column ml-0 order-first-mobile display-mobile-flex">
+                                    <a href="/mens-watches" className="navigation-mega-menu-header transform-none">
+                                        Men's Watches Home
+                                        <i className="fas fa-arrow-right pl-3"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <span onClick={this.handleMenuToggle(this.mensMenu)}>
@@ -141,6 +147,12 @@ class Navbar extends Component {
                                 <div className="navigation-mega-menu d-flex flex-column order-first-mobile">
                                     <a href="/womens-watches" className="navigation-mega-menu-header transform-none">
                                         All Women's Watches
+                                        <i className="fas fa-arrow-right pl-3"></i>
+                                    </a>
+                                </div>
+                                <div className="navigation-mega-menu d-flex flex-column order-first-mobile display-mobile-flex">
+                                    <a href="/womens-watches" className="navigation-mega-menu-header transform-none">
+                                        Women's Watches Home
                                         <i className="fas fa-arrow-right pl-3"></i>
                                     </a>
                                 </div>
@@ -193,6 +205,14 @@ class Navbar extends Component {
                                     <span className="navigation-mega-menu-header">
                                       <a href="/bags" className="transform-none">
                                         All Bags
+                                        <i className="fas fa-arrow-right pl-3"></i>
+                                      </a>
+                                    </span>
+                                </div>
+                                <div className="navigation-mega-menu d-flex flex-column order-first-mobile display-mobile-flex">
+                                    <span className="navigation-mega-menu-header">
+                                      <a href="/bags" className="transform-none">
+                                        Bags Home
                                         <i className="fas fa-arrow-right pl-3"></i>
                                       </a>
                                     </span>
@@ -251,6 +271,14 @@ class Navbar extends Component {
                                     <span className="navigation-mega-menu-header">
                                       <a href="/clothing" className="transform-none">
                                         All Clothing & Accessories
+                                        <i className="fas fa-arrow-right pl-3"></i>
+                                      </a>
+                                    </span>
+                                </div>
+                                <div className="navigation-mega-menu d-flex order-first-mobile display-mobile-flex display-mobile-flex">
+                                    <span className="navigation-mega-menu-header">
+                                      <a href="/clothing" className="transform-none">
+                                        Clothing & Accessories Home
                                         <i className="fas fa-arrow-right pl-3"></i>
                                       </a>
                                     </span>
