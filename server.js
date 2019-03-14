@@ -27,6 +27,7 @@ app.use('/get-collections', require('./routers/get-collections'));
 app.use('/get-watches', require('./routers/get-watches'));
 app.use('/get-bags', require('./routers/get-bags'));
 app.use('/get-apparel', require('./routers/get-apparel'));
+app.use('/catalog', require('./routers/catalog'));
 
 app.listen((process.env.PORT || 3000), () => {
     console.log('Kennedy is live at port 3000.');

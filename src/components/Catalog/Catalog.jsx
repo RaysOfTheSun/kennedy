@@ -7,7 +7,6 @@ class Catalog extends Component {
         super(props);
         this.state = {data: []};
         this.GetData = this.GetData.bind(this);
-        this.MakeItem = this.MakeItem.bind(this);
         this.formatMoney = this.formatMoney.bind(this);
         this.GetData();
     }
@@ -56,48 +55,6 @@ class Catalog extends Component {
         }
     }
 
-    MakeItem(collection) {
-        let catalogItems = [];
-
-        if (collection.length > 0) {
-            let x;
-            let y;
-
-            for (let i = 0; i < collection.length; i += 2) {
-                x = <div className={'d-flex justify-content-center align-items-center flex-column'}>
-                    {<img src={collection[i].image} alt={collection[i].name}/>}
-                    <div className={'d-flex justify-content-center align-items-center flex-column'}>
-                        <p className={'section-header text-uppercase'}>{collection[i].name}</p>
-                        <p className={'section-desc transform-none text-muted'}>{collection[i].type}</p>
-                        <p className={'section-desc transform-none text-muted'}>
-                            {`USD ${this.formatMoney(collection[i].price)}`}
-                        </p>
-                    </div>
-                </div>
-
-                y = collection[i + 1] ?
-                    <div className={'d-flex justify-content-center align-items-center flex-column'}>
-                        {<img src={collection[i + 1].image} alt={collection[i + 1].name}/>}
-                        <div className={'d-flex justify-content-center align-items-center flex-column'}>
-                            <p className={'section-header text-uppercase'}>{collection[i + 1].name}</p>
-                            <p className={'section-desc transform-none text-muted'}>{collection[i + 1].type}</p>
-                            <p className={'section-desc transform-none text-muted'}>
-                                {`USD ${this.formatMoney(collection[i + 1].price)}`}
-                            </p>
-                        </div>
-                    </div> : null;
-
-                catalogItems.push(
-                    <div className={'d-flex justify-content-center align-items-center flex-mobile-column'}>
-
-                    </div>
-                )
-            }
-        }
-
-        return catalogItems;
-    }
-
     formatMoney(n, c, d, t) {
         // S.O. code
         c = isNaN(c = Math.abs(c)) ? 2 : c;
@@ -126,7 +83,7 @@ class Catalog extends Component {
                                         console.log(collection[i].price, collection[i + 1].price);
                                         itemDiv.push(
                                             <div
-                                                className={'d-flex justify-content-center align-items-center flex-mobile-column'}>
+                                                className={'d-flex justify-content-center align-items-center flex-mobile-column-alt'}>
                                                 <div
                                                     className={'d-flex justify-content-center align-items-center flex-column'}>
                                                     {<img src={collection[i].image}
@@ -134,9 +91,9 @@ class Catalog extends Component {
                                                           className={'image-350-200'}/>}
                                                     <div
                                                         className={'d-flex justify-content-center align-items-center flex-column'}>
-                                                        <p className={'section-header text-uppercase'}>{collection[i].name}</p>
-                                                        <p className={'section-desc transform-none text-muted'}>{collection[i].type}</p>
-                                                        <p className={'section-desc transform-none text-muted'}>
+                                                        <p className={'catalog-item-header text-uppercase'}>{collection[i].name}</p>
+                                                        <p className={'catalog-item-desc text-muted m-0'}>{collection[i].type || 'watch type'}</p>
+                                                        <p className={'catalog-item-desc text-muted m-0'}>
                                                             {`USD ${this.formatMoney(collection[i].price)}`}
                                                         </p>
                                                     </div>
@@ -150,13 +107,13 @@ class Catalog extends Component {
                                                                   className={'image-350-200'}/>}
                                                             <div
                                                                 className={'d-flex justify-content-center align-items-center flex-column'}>
-                                                                <p className={'section-header text-uppercase'}>{collection[i + 1].name}</p>
-                                                                <p className={'section-desc transform-none text-muted'}>{collection[i + 1].type}</p>
-                                                                <p className={'section-desc transform-none text-muted'}>
-                                                                    {`USD ${this.formatMoney(collection[i + 1].price)}`}
+                                                                <p className={'catalog-item-header text-uppercase'}>{collection[i + 1].name}</p>
+                                                                <p className={'catalog-item-desc text-muted m-0'}>{collection[i + 1].type || 'watch type'}</p>
+                                                                <p className={'catalog-item-desc text-muted m-0'}>
+                                                                    {`USD ${this.formatMoney(collection[i + 1].price) }`}
                                                                 </p>
                                                             </div>
-                                                        </div> : <p>fuck</p>
+                                                        </div> : ''
                                                 }
                                             </div>
                                         )
@@ -176,4 +133,4 @@ class Catalog extends Component {
     }
 }
 
-render(<Catalog/>, document.getElementById('test'));
+render(<Catalog/>, document.getElementById('catalog-container'));

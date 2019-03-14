@@ -9,10 +9,10 @@
 }
 
 .image-350-200 {
-  width: 200px;
+  width: 100%;
   height: auto;
-  @include respond-to(desktop-up) {
-    width: 350px;
+  @include respond-to(tablet-portrait-up) {
+    width: 60%;
   }
 }
 
