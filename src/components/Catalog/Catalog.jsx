@@ -113,57 +113,60 @@ class Catalog extends Component {
     render() {
 
         if (this.state.data.length > 0) {
+
             return (
-                <div className={'d-flex justify-content-center align-items-center flex-mobile-column'}>
-                    {
-                        this.state.data.map(collection => (
-                            <div className={'d-flex justify-content-center align-items-center'}>
-                                {
-                                    (
-                                        () => {
-                                            let itemDiv;
-                                            for (let i = 0; i < collection.length; i += 2) {
-                                                itemDiv =
-                                                    <div className={'d-flex justify-content-center align-items-center flex-mobile-column'}>
+
+                this.state.data.map(collection => (
+                    <div className={'d-flex justify-content-center align-items-center'}>
+                        {
+                            (
+                                (collection) => {
+                                    let itemDiv = [];
+                                    for (let i = 0; i < collection.length; i += 2) {
+                                        console.log(collection[i].price, collection[i + 1].price);
+                                        itemDiv.push(
+                                            <div
+                                                className={'d-flex justify-content-center align-items-center flex-mobile-column'}>
+                                                <div
+                                                    className={'d-flex justify-content-center align-items-center flex-column'}>
+                                                    {<img src={collection[i].image}
+                                                          alt={collection[i].name}
+                                                          className={'image-350-200'}/>}
+                                                    <div
+                                                        className={'d-flex justify-content-center align-items-center flex-column'}>
+                                                        <p className={'section-header text-uppercase'}>{collection[i].name}</p>
+                                                        <p className={'section-desc transform-none text-muted'}>{collection[i].type}</p>
+                                                        <p className={'section-desc transform-none text-muted'}>
+                                                            {`USD ${this.formatMoney(collection[i].price)}`}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                {
+                                                    collection[i + 1] !== null ?
                                                         <div
                                                             className={'d-flex justify-content-center align-items-center flex-column'}>
-                                                            {<img src={collection[i].image}
-                                                                  alt={collection[i].name}/>}
+                                                            {<img src={collection[i + 1].image}
+                                                                  alt={collection[i + 1].name}
+                                                                  className={'image-350-200'}/>}
                                                             <div
                                                                 className={'d-flex justify-content-center align-items-center flex-column'}>
-                                                                <p className={'section-header text-uppercase'}>{collection[i].name}</p>
-                                                                <p className={'section-desc transform-none text-muted'}>{collection[i].type}</p>
+                                                                <p className={'section-header text-uppercase'}>{collection[i + 1].name}</p>
+                                                                <p className={'section-desc transform-none text-muted'}>{collection[i + 1].type}</p>
                                                                 <p className={'section-desc transform-none text-muted'}>
-                                                                    {`USD ${this.formatMoney(collection[i].price)}`}
+                                                                    {`USD ${this.formatMoney(collection[i + 1].price)}`}
                                                                 </p>
                                                             </div>
-                                                        </div>
-                                                        {
-                                                            collection[i + 1] ?
-                                                                <div
-                                                                    className={'d-flex justify-content-center align-items-center flex-column'}>
-                                                                    {<img src={collection[i + 1].image}
-                                                                          alt={collection[i + 1].name}/>}
-                                                                    <div
-                                                                        className={'d-flex justify-content-center align-items-center flex-column'}>
-                                                                        <p className={'section-header text-uppercase'}>{collection[i + 1].name}</p>
-                                                                        <p className={'section-desc transform-none text-muted'}>{collection[i + 1].type}</p>
-                                                                        <p className={'section-desc transform-none text-muted'}>
-                                                                            {`USD ${this.formatMoney(collection[i + 1].price)}`}
-                                                                        </p>
-                                                                    </div>
-                                                                </div> : ''
-                                                        }
-                                                    </div>
-                                            }
-                                            return itemDiv;
-                                        }
-                                    )()
+                                                        </div> : <p>fuck</p>
+                                                }
+                                            </div>
+                                        )
+                                    }
+                                    return itemDiv;
                                 }
-                            </div>
-                        ))
-                    }
-                </div>
+                            )(collection)
+                        }
+                    </div>
+                ))
             )
         } else {
             return (

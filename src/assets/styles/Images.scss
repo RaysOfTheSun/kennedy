@@ -8,6 +8,14 @@
   }
 }
 
+.image-350-200 {
+  width: 200px;
+  height: auto;
+  @include respond-to(desktop-up) {
+    width: 350px;
+  }
+}
+
 .image-200-75p {
   width: 75%;
   height: auto;
