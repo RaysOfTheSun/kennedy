@@ -35,6 +35,16 @@
   }
 }
 
+.catalog-banner-image {
+  background-image: url("/images/bg-10s.jpg");
+  background-position: center;
+
+  @include respond-to(desktop-up) {
+    background-image: url("/images/bg-10t.jpg");
+    height: 500px;
+  }
+}
+
 .mens-banner-image {
   background-image: url("/images/bg-04s.jpg");
 

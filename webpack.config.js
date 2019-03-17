@@ -14,7 +14,7 @@ module.exports = {
         apparel: ['./src/components/HatsAndAccessoriesBannerCarousel/HatsAndAccessoriesBannerCarousel.jsx',
             './src/components/ShirtsBannerCarousel/ShirtsBannerCarousel.jsx'],
         productPrev : ['./src/components/ProductDetails/ProductDetails.jsx', './src/components/WatchesCardGrid/WatchesCardGrid.jsx', './src/productPrev.js'],
-        catalog: ['./src/components/Catalog/Catalog.jsx', './src/catalog.js']
+        catalog: ['./src/components/Catalog/Catalog.jsx', './src/components/Catalog/CatalogWrapper.jsx', './src/catalog.js']
     },
     output: {
         path: path.join(DIST_DIR, 'app'),

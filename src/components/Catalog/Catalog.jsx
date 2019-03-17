@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {render} from 'react-dom';
 
-class Catalog extends Component {
+export default class Catalog extends Component {
     constructor(props) {
         super(props);
         this.state = {data: []};
@@ -44,12 +44,6 @@ class Catalog extends Component {
                 }
             }
 
-            console.log(dataHandler);
-            // dataHandler = dataHandler.map((collection) => {
-            //     return this.MakeItem(collection);
-            // });
-
-            console.log(dataHandler);
             this.setState({data: dataHandler});
 
         }
@@ -72,7 +66,6 @@ class Catalog extends Component {
         if (this.state.data.length > 0) {
 
             return (
-
                 this.state.data.map(collection => (
                     <div className={'d-flex justify-content-center align-items-center'}>
                         {
@@ -83,37 +76,41 @@ class Catalog extends Component {
                                         console.log(collection[i].price, collection[i + 1].price);
                                         itemDiv.push(
                                             <div
-                                                className={'d-flex justify-content-center align-items-center flex-mobile-column-alt'}>
-                                                <div
-                                                    className={'d-flex justify-content-center align-items-center flex-column'}>
-                                                    {<img src={collection[i].image}
-                                                          alt={collection[i].name}
-                                                          className={'image-350-200'}/>}
+                                                className={'d-flex justify-content-center align-items-center flex-mobile-column-alt link-plain'}>
+                                                <a href={collection[i].price ? `/products/watches/${collection[i].name}` : '#'}>
                                                     <div
-                                                        className={'d-flex justify-content-center align-items-center flex-column'}>
-                                                        <p className={'catalog-item-header text-uppercase'}>{collection[i].name}</p>
-                                                        <p className={'catalog-item-desc text-muted m-0'}>{collection[i].type || 'watch type'}</p>
-                                                        <p className={'catalog-item-desc text-muted m-0'}>
-                                                            {`USD ${this.formatMoney(collection[i].price)}`}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                {
-                                                    collection[i + 1] !== null ?
+                                                        className={'d-flex justify-content-center align-items-center flex-column catalog-item'}>
+                                                        {<img src={collection[i].image}
+                                                              alt={collection[i].name}
+                                                              className={'image-350-200'}/>}
                                                         <div
                                                             className={'d-flex justify-content-center align-items-center flex-column'}>
-                                                            {<img src={collection[i + 1].image}
-                                                                  alt={collection[i + 1].name}
-                                                                  className={'image-350-200'}/>}
+                                                            <p className={'catalog-item-header text-uppercase'}>{collection[i].name}</p>
+                                                            <p className={'catalog-item-desc text-muted'}>{collection[i].type || 'watch type'}</p>
+                                                            <p className={'catalog-item-desc text-muted m-0'}>
+                                                                {`USD ${this.formatMoney(collection[i].price || 10000)}`}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                {
+                                                    collection[i + 1] !== null ?
+                                                        <a href={collection[i + 1].price ? `/products/watches/${collection[i + 1].name}` : '#'}>
                                                             <div
-                                                                className={'d-flex justify-content-center align-items-center flex-column'}>
-                                                                <p className={'catalog-item-header text-uppercase'}>{collection[i + 1].name}</p>
-                                                                <p className={'catalog-item-desc text-muted m-0'}>{collection[i + 1].type || 'watch type'}</p>
-                                                                <p className={'catalog-item-desc text-muted m-0'}>
-                                                                    {`USD ${this.formatMoney(collection[i + 1].price) }`}
-                                                                </p>
+                                                                className={'d-flex justify-content-center align-items-center flex-column catalog-item'}>
+                                                                {<img src={collection[i + 1].image}
+                                                                      alt={collection[i + 1].name}
+                                                                      className={'image-350-200'}/>}
+                                                                <div
+                                                                    className={'d-flex justify-content-center align-items-center flex-column'}>
+                                                                    <p className={'catalog-item-header text-uppercase'}>{collection[i + 1].name}</p>
+                                                                    <p className={'catalog-item-desc text-muted'}>{collection[i + 1].type || 'watch type'}</p>
+                                                                    <p className={'catalog-item-desc text-muted m-0'}>
+                                                                        {`USD ${this.formatMoney(collection[i + 1].price || 10000)}`}
+                                                                    </p>
+                                                                </div>
                                                             </div>
-                                                        </div> : ''
+                                                        </a> : ''
                                                 }
                                             </div>
                                         )
@@ -133,4 +130,4 @@ class Catalog extends Component {
     }
 }
 
-render(<Catalog/>, document.getElementById('catalog-container'));
+// render(<Catalog/>, document.getElementById('catalog-container'));
