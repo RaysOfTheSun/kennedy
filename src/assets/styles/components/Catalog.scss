@@ -23,8 +23,8 @@
 }
 
 .catalog-filter-container {
+  color: white;
   width: 100%;
-  height: 100px;
   background-color: white;
   transform: translate3d(0, 0, 0);
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -32,4 +32,52 @@
 
 .catalog-item {
   max-width: 300px;
+}
+
+.catalog-filter-item {
+  &:hover {
+    &  .catalog-filter-menu {
+      height: 400px !important;
+    }
+  }
+}
+
+.catalog-filter-header {
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  padding: 30px;
+  &:after {
+    content: "\2038";
+    font-size: 2.5rem;
+    position: absolute;
+    display: inline-block;
+    transition: transform 0.3s linear;
+    transform: translate3d(90%, 12%, 0) rotate3d(1, 0, 0, 180deg);
+  }
+
+  &:hover {
+    &:after {
+      transform: translate3d(90%, -55%, 0) rotate3d(0, -1, 0, 180deg);
+    }
+  }
+}
+
+.catalog-filter-menu {
+  display: flex;
+  top: 100%;
+  position: absolute;
+  height: 0;
+  width: 200px;
+  background-color: black;
+  transition: height 0.3s linear;
+
+  &:hover {
+    height: 400px;
+    & + .catalog-filter-header {
+      &:after {
+        transform: translate3d(90%, -55%, 0) rotate3d(0, -1, 0, 180deg);
+      }
+    }
+  }
 }

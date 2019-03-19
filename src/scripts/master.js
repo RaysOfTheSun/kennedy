@@ -6,7 +6,7 @@ window.onload = () => {
     // fadein and fadeout effects
     const $body = $('body');
     $($body).hide();
-    $($body).fadeIn(1000);
+    $($body).fadeIn(500);
 
     $('a').on('click', (e) => {
         e.preventDefault();
