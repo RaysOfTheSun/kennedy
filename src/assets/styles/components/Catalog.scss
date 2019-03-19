@@ -37,7 +37,8 @@
 .catalog-filter-item {
   &:hover {
     &  .catalog-filter-menu {
-      height: 400px !important;
+      height: 400px;
+      opacity: 1;
     }
   }
 }
@@ -49,10 +50,11 @@
   padding: 30px;
   &:after {
     content: "\2038";
+    color: $kenny-red;
     font-size: 2.5rem;
     position: absolute;
     display: inline-block;
-    transition: transform 0.3s linear;
+    transition: transform 0.3s ease;
     transform: translate3d(90%, 12%, 0) rotate3d(1, 0, 0, 180deg);
   }
 
@@ -70,7 +72,9 @@
   height: 0;
   width: 200px;
   background-color: black;
-  transition: height 0.3s linear;
+  opacity: 0;
+  transition: height 0.3s linear, opacity 0.3s linear;
+  overflow: hidden;
 
   &:hover {
     height: 400px;
