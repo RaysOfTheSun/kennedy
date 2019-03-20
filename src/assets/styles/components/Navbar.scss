@@ -152,7 +152,7 @@
         position: absolute;
         display: inline-block;
         transition: transform 0.3s linear;
-        transform: translate3d(90%, 0, 0) rotate3d(1, 0, 0, 180deg);
+        transform: translate3d(90%, 0, 0) rotate3d(0, 0, 1, 180deg);
       }
 
       &:hover {
