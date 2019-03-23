@@ -22,7 +22,6 @@ const Catalog = ({data}) => {
                         (collection) => {
                             let itemDiv = [];
                             for (let i = 0; i < collection.length; i += 2) {
-                                console.log(collection[i].price, collection[i + 1].price);
                                 itemDiv.push(
                                     <div
                                         className={'d-flex justify-content-center align-items-center flex-mobile-column-alt link-plain'}>
