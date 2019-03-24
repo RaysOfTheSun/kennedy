@@ -6,9 +6,11 @@ class CatalogWrapper extends Component {
     constructor(props) {
         super(props);
         this.state = {currFilter: 'all', collectionFilters: {}, categoryFilters: {}, data: [], complete: false};
+        this.catalogFilterContainerRef = React.createRef();
         this.GetData = this.GetData.bind(this);
         this.PartitionCollection = this.PartitionCollection.bind(this);
         this.GetFilters = this.GetFilters.bind(this);
+        this.HandleFilterButtonClick = this.HandleFilterButtonClick.bind(this);
         this.GetFilters();
         this.GetData();
     }
@@ -65,14 +67,24 @@ class CatalogWrapper extends Component {
             });
     }
 
+    HandleFilterButtonClick() {
+        this.catalogFilterContainerRef.current.classList.toggle('filter-container-shown');
+    }
 
     render() {
         if (this.state.data.length > 0 && this.state.complete) {
             return (
                 <div className={'d-flex flex-column align-items-center pb-5'}>
                     <div className="d-flex justify-content-around align-items-center bg-black catalog-filter-container">
-                        <div className={'d-flex kenny-container justify-content-around align-items-center'}>
-                            <div className={'d-flex justify-content-center align-items-center catalog-filter-item'}>
+                        <div className={'display-mobile-flex justify-content-center align-items-center'} onClick={this.HandleFilterButtonClick}>
+                            <i className="fas fa-sliders-h"/>
+                            <h5 className={'catalog-filter-header after-none px-2 m-0'}>Filter</h5>
+                        </div>
+                        <div
+                            className={'catalog-filter-menu-container kenny-container justify-content-around align-items-center'}
+                            ref={this.catalogFilterContainerRef}>
+                            <div
+                                className={'d-flex justify-content-center align-items catalog-filter-menu-center catalog-filter-item'}>
                                 <div
                                     className={'justify-content-center align-items-center catalog-filter-menu flex-column'}>
                                     {
@@ -112,6 +124,16 @@ class CatalogWrapper extends Component {
                                 <div
                                     className={'justify-content-center align-items-center catalog-filter-menu flex-column'}>
                                     <div className={'d-flex align-items-center'}>
+                                        <input type={'radio'} id={'sort-filter-5'}
+                                               className={'filter-item-input filter-item-radio'}
+                                               name={'sort-option'}
+                                               checked={true}/>
+                                        <label htmlFor={'sort-filter-5'} className={'filter-item-label'}>
+                                            Default
+                                            <i className="fas fa-box-open px-1"></i>
+                                        </label>
+                                    </div>
+                                    <div className={'d-flex align-items-center'}>
                                         <input type={'radio'} id={'sort-filter-0'}
                                                className={'filter-item-input filter-item-radio'}
                                                name={'sort-option'}/>
@@ -126,7 +148,7 @@ class CatalogWrapper extends Component {
                                                name={'sort-option'}/>
                                         <label htmlFor={'sort-filter-1'} className={'filter-item-label'}>
                                             Name Descending
-                                            <i className="fas fa-sort-alpha-down px-1"></i>
+                                            <i className="fas fa-sort-alpha-down px-1"/>
                                         </label>
                                     </div>
                                     <div className={'d-flex align-items-center'}>
