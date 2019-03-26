@@ -11,6 +11,7 @@ class CatalogWrapper extends Component {
         this.PartitionCollection = this.PartitionCollection.bind(this);
         this.GetFilters = this.GetFilters.bind(this);
         this.HandleFilterButtonClick = this.HandleFilterButtonClick.bind(this);
+        this.HandleFilterOptionClick = this.HandleFilterOptionClick.bind(this);
         this.GetFilters();
         this.GetData();
     }
@@ -71,22 +72,30 @@ class CatalogWrapper extends Component {
         this.catalogFilterContainerRef.current.classList.toggle('filter-container-shown');
     }
 
+    HandleFilterOptionClick(filerID) {
+        return () => {
+            const menu = document.querySelector(`[data-menu='${filerID}']`);
+            menu.classList.toggle('menu-shown');
+        };
+    }
+
     render() {
         if (this.state.data.length > 0 && this.state.complete) {
             return (
                 <div className={'d-flex flex-column align-items-center pb-5'}>
                     <div className="d-flex justify-content-around align-items-center bg-black catalog-filter-container">
-                        <div className={'display-mobile-flex justify-content-center align-items-center'} onClick={this.HandleFilterButtonClick}>
+                        <div className={'display-mobile-flex justify-content-center align-items-center w-100'}
+                             onClick={this.HandleFilterButtonClick}>
                             <i className="fas fa-sliders-h"/>
                             <h5 className={'catalog-filter-header after-none px-2 m-0'}>Filter</h5>
                         </div>
                         <div
                             className={'catalog-filter-menu-container kenny-container justify-content-around align-items-center'}
                             ref={this.catalogFilterContainerRef}>
-                            <div
-                                className={'d-flex justify-content-center align-items catalog-filter-menu-center catalog-filter-item'}>
-                                <div
-                                    className={'justify-content-center align-items-center catalog-filter-menu flex-column'}>
+                            <div onClick={this.HandleFilterOptionClick('1')}
+                                 className={'d-flex justify-content-center align-items catalog-filter-menu-center catalog-filter-item'}>
+                                <div data-menu={1}
+                                     className={'justify-content-center align-items-center catalog-filter-menu flex-column'}>
                                     {
                                         Object.keys(this.state.categoryFilters).map((key, i) => (
                                             <div className={'d-flex align-items-center'}>
@@ -101,9 +110,10 @@ class CatalogWrapper extends Component {
                                 </div>
                                 <h5 className={'catalog-filter-header'}>Category</h5>
                             </div>
-                            <div className={'d-flex justify-content-center align-items-center catalog-filter-item'}>
-                                <div
-                                    className={'justify-content-center align-items-center catalog-filter-menu flex-column'}>
+                            <div onClick={this.HandleFilterOptionClick('2')}
+                                 className={'d-flex justify-content-center align-items-center catalog-filter-item'}>
+                                <div data-menu={2}
+                                     className={'justify-content-center align-items-center catalog-filter-menu flex-column'}>
                                     {
                                         Object.keys(this.state.collectionFilters).map((collection, i) => (
                                             <div className={'d-flex align-items-center'}>
@@ -120,9 +130,10 @@ class CatalogWrapper extends Component {
                                 </div>
                                 <h5 className={'catalog-filter-header'}>Collection</h5>
                             </div>
-                            <div className={'d-flex justify-content-center align-items-center catalog-filter-item'}>
-                                <div
-                                    className={'justify-content-center align-items-center catalog-filter-menu flex-column'}>
+                            <div onClick={this.HandleFilterOptionClick('3')}
+                                 className={'d-flex justify-content-center align-items-center catalog-filter-item'}>
+                                <div data-menu={3}
+                                     className={'justify-content-center align-items-center catalog-filter-menu flex-column'}>
                                     <div className={'d-flex align-items-center'}>
                                         <input type={'radio'} id={'sort-filter-5'}
                                                className={'filter-item-input filter-item-radio'}
@@ -172,8 +183,10 @@ class CatalogWrapper extends Component {
                                 </div>
                                 <h5 className={'catalog-filter-header'}>Sort by</h5>
                             </div>
-                            <div className={'d-flex justify-content-center align-items-center catalog-filter-item'}>
-                                <div className={'justify-content-center align-items-center catalog-filter-menu'}>
+                            <div onClick={this.HandleFilterOptionClick('4')}
+                                 className={'d-flex justify-content-center align-items-center catalog-filter-item'}>
+                                <div data-menu={4}
+                                     className={'justify-content-center align-items-center catalog-filter-menu'}>
                                 </div>
                                 <h5 className={'catalog-filter-header'}>Price</h5>
                             </div>

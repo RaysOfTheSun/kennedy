@@ -123,12 +123,13 @@
   overflow: hidden;
   padding: 15px 0;
   z-index: 2;
-  width: 100%;
+  //width: 100%;
   height: 100%;
 
   @include respond-to(desktop-up) {
     top: 100%;
     width: 250px;
+    height: auto;
     max-height: 0;
     &:hover {
       & + .catalog-filter-header {
@@ -172,4 +173,8 @@
   &:focus {
     outline: none;
   }
+}
+
+.menu-shown {
+  opacity: 1 !important;
 }
