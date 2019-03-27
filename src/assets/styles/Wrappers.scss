@@ -45,6 +45,18 @@
   position: relative;
 }
 
+.pos-abs-center-mobile {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @include respond-to(tablet-portrait-up) {
+    position: relative;
+  }
+
+}
+
 .pos-abs-center-desk {
   @include respond-to(desktop-up) {
     position: absolute;

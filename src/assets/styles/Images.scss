@@ -8,6 +8,14 @@
   }
 }
 
+.image-350-200 {
+  width: 100%;
+  height: auto;
+  @include respond-to(tablet-portrait-up) {
+    width: 90%;
+  }
+}
+
 .image-200-75p {
   width: 75%;
   height: auto;

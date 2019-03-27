@@ -9,4 +9,3 @@ exports.getFeatured = (req, res) => {
         res.send(result);
     });
 };
-

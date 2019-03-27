@@ -24,5 +24,12 @@ router.get('/products/:category/:product', (req, res) => {
    res.render('product', {title: `Kennedy | ${req.params.product}`});
 });
 
+router.get('/', (req, res) => {
+    res.render('catalog', {title: 'Kennedy | Watches'});
+});
+
+router.get('/catalog/:category', (req, res) => {
+    res.render('catalog', {title: 'Kennedy | Watches'});
+});
 
 module.exports = router;
