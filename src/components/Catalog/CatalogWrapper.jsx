@@ -61,7 +61,12 @@ class CatalogWrapper extends Component {
     }
 
     async GetData() {
-        await fetch('/get-watches/all', {method: 'GET'})
+        const category = window.location.pathname.replace(/[\/][a-z]+[\/]*/, '')
+            .replace('/', '');
+        let dataPath = category.length > 0 ? `/get-watches/filtered?category=${category}` :
+            `/get-watches/all`;
+        console.log(category, dataPath);
+        await fetch(dataPath, {method: 'GET'})
             .then(watches => watches.json())
             .then(collection => {
                 this.setState({data: this.PartitionCollection(collection)});

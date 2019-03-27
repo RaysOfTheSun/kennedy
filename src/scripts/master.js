@@ -3,20 +3,20 @@ window.onload = () => {
     document.documentElement.classList.remove('no-flash');
     const scrollContainer = document.querySelector('.scroll-up-container');
 
-    // fadein and fadeout effects
-    const $body = $('body');
-    $($body).hide();
-    $($body).fadeIn(500);
-
-    $('a').on('click', (e) => {
-        e.preventDefault();
-        // current target because not every anchor element is a pure anchor element
-        if (e.currentTarget.getAttribute('href') !== '#') {
-            $('body').fadeOut(() => {
-                window.location.href = $(e.currentTarget).attr('href');
-            });
-        }
-    });
+    // // fadein and fadeout effects
+    // const $body = $('body');
+    // $($body).hide();
+    // $($body).fadeIn(500);
+    //
+    // $('a').on('click', (e) => {
+    //     e.preventDefault();
+    //     // current target because not every anchor element is a pure anchor element
+    //     if (e.currentTarget.getAttribute('href') !== '#') {
+    //         $('body').fadeOut(() => {
+    //             window.location.href = $(e.currentTarget).attr('href');
+    //         });
+    //     }
+    // });
 
     // handlers for our footer
     function handleClick() {
