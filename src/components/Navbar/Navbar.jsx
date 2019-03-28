@@ -30,7 +30,6 @@ class Navbar extends Component {
         this.navRef.current.classList.toggle('kenny-nav-expanded');
     }
 
-
     render() {
         return (
             <div className={'kenny-nav kenny-nav-landed'}>
@@ -95,12 +94,13 @@ class Navbar extends Component {
                                         <i className="fas fa-arrow-right pl-3"></i>
                                     </a>
                                 </div>
-                                <div className="navigation-mega-menu d-flex flex-column ml-0 order-first-mobile display-mobile-flex">
-                                    <a href="/mens-watches" className="navigation-mega-menu-header transform-none">
-                                        Men's Watches Home
-                                        <i className="fas fa-arrow-right pl-3"></i>
-                                    </a>
-                                </div>
+                                {/*<div*/}
+                                {/*    className="navigation-mega-menu d-flex flex-column ml-0 order-first-mobile display-mobile-flex">*/}
+                                {/*    <a href="/mens-watches" className="navigation-mega-menu-header transform-none">*/}
+                                {/*        Men's Watches Home*/}
+                                {/*        <i className="fas fa-arrow-right pl-3"></i>*/}
+                                {/*    </a>*/}
+                                {/*</div>*/}
                             </div>
                         </div>
                         <span onClick={this.handleMenuToggle(this.mensMenu)}>
@@ -150,12 +150,13 @@ class Navbar extends Component {
                                         <i className="fas fa-arrow-right pl-3"></i>
                                     </a>
                                 </div>
-                                <div className="navigation-mega-menu d-flex flex-column order-first-mobile display-mobile-flex">
-                                    <a href="/womens-watches" className="navigation-mega-menu-header transform-none">
-                                        Women's Watches Home
-                                        <i className="fas fa-arrow-right pl-3"></i>
-                                    </a>
-                                </div>
+                                {/*<div*/}
+                                {/*    className="navigation-mega-menu d-flex flex-column order-first-mobile display-mobile-flex">*/}
+                                {/*    <a href="/womens-watches" className="navigation-mega-menu-header transform-none">*/}
+                                {/*        Women's Watches Home*/}
+                                {/*        <i className="fas fa-arrow-right pl-3"></i>*/}
+                                {/*    </a>*/}
+                                {/*</div>*/}
                             </div>
                         </div>
                         <span onClick={this.handleMenuToggle(this.womensMenu)}>
@@ -209,14 +210,15 @@ class Navbar extends Component {
                                       </a>
                                     </span>
                                 </div>
-                                <div className="navigation-mega-menu d-flex flex-column order-first-mobile display-mobile-flex">
-                                    <span className="navigation-mega-menu-header">
-                                      <a href="/bags" className="transform-none">
-                                        Bags Home
-                                        <i className="fas fa-arrow-right pl-3"></i>
-                                      </a>
-                                    </span>
-                                </div>
+                                {/*<div*/}
+                                {/*    className="navigation-mega-menu d-flex flex-column order-first-mobile display-mobile-flex">*/}
+                                {/*    <span className="navigation-mega-menu-header">*/}
+                                {/*      <a href="/bags" className="transform-none">*/}
+                                {/*        Bags Home*/}
+                                {/*        <i className="fas fa-arrow-right pl-3"></i>*/}
+                                {/*      </a>*/}
+                                {/*    </span>*/}
+                                {/*</div>*/}
                             </div>
                         </div>
                         <span onClick={this.handleMenuToggle(this.bagsMenu)}>
@@ -275,14 +277,15 @@ class Navbar extends Component {
                                       </a>
                                     </span>
                                 </div>
-                                <div className="navigation-mega-menu d-flex order-first-mobile display-mobile-flex display-mobile-flex">
-                                    <span className="navigation-mega-menu-header">
-                                      <a href="/clothing" className="transform-none">
-                                        Clothing & Accessories Home
-                                        <i className="fas fa-arrow-right pl-3"></i>
-                                      </a>
-                                    </span>
-                                </div>
+                                {/*<div*/}
+                                {/*    className="navigation-mega-menu d-flex order-first-mobile display-mobile-flex display-mobile-flex">*/}
+                                {/*    <span className="navigation-mega-menu-header">*/}
+                                {/*      <a href="/clothing" className="transform-none">*/}
+                                {/*        Clothing & Accessories Home*/}
+                                {/*        <i className="fas fa-arrow-right pl-3"></i>*/}
+                                {/*      </a>*/}
+                                {/*    </span>*/}
+                                {/*</div>*/}
                             </div>
                         </div>
                         <span onClick={this.handleMenuToggle(this.apparelMenu)}>
