@@ -7,13 +7,14 @@ module.exports = {
     entry: {
         main: ['./src/components/Navbar/Navbar.jsx', './src/main.js'],
         index: ['./src/components/CardGrid/CardGrid.jsx', './src/components/DiscoverGrid/DiscoverGrid.jsx'],
+        slideShow: ['./src/components/SlideShow/SlideShow.jsx'],
         categoryIndex: ['./src/category-index.js', './src/components/MensDiscoverGrid/MensDiscoverGrid.jsx',
             './src/components/BannerCarousel/BannerCarousel.jsx', './src/components/WomensDiscoverGrid/WomensDiscoverGrid.jsx'],
         bags: ['./src/components/BagsFeaturedBannerCarousel/BagsFeaturedBannerCarousel.jsx',
             './src/components/BagsNewArrivalBannerCarousel/BagsNewArrivalBannerCarousel.jsx'],
         apparel: ['./src/components/HatsAndAccessoriesBannerCarousel/HatsAndAccessoriesBannerCarousel.jsx',
             './src/components/ShirtsBannerCarousel/ShirtsBannerCarousel.jsx'],
-        productPrev : ['./src/components/ProductDetails/ProductDetails.jsx', './src/components/WatchesCardGrid/WatchesCardGrid.jsx', './src/productPrev.js'],
+        productPrev: ['./src/components/ProductDetails/ProductDetails.jsx', './src/components/WatchesCardGrid/WatchesCardGrid.jsx', './src/productPrev.js'],
         catalog: ['./src/components/Catalog/Catalog.jsx', './src/components/Catalog/CatalogWrapper.jsx', './src/catalog.js']
     },
     output: {
