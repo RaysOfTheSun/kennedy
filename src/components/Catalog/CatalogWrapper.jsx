@@ -12,6 +12,9 @@ class CatalogWrapper extends Component {
         this.GetFilters = this.GetFilters.bind(this);
         this.HandleFilterButtonClick = this.HandleFilterButtonClick.bind(this);
         this.HandleFilterOptionClick = this.HandleFilterOptionClick.bind(this);
+    }
+
+    componentDidMount() {
         this.GetFilters();
         this.GetData();
     }
