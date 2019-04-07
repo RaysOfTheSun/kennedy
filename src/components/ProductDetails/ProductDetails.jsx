@@ -136,10 +136,7 @@ class ProductDetails extends Component {
                                 <h6 className="text-muted">tax excluded</h6>
                                 <div className="d-flex flex-column align-self-stretch">
                                     <input type="button"
-                                           className="text-uppercase btn-black product-preview-input w-60-75-100"
-                                           value="Add to Cart"/>
-                                    <input type="button"
-                                           className="text-uppercase btn-black btn-outline-black product-preview-input w-60-75-100"
+                                           className="text-uppercase btn-black btn-black product-preview-input w-60-75-100"
                                            value="Call to Buy (+1) 123 456 7890"/>
                                     <input type="button"
                                            className="text-uppercase btn-black btn-outline-black product-preview-input w-60-75-100"

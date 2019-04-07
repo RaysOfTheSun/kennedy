@@ -293,12 +293,12 @@ class Navbar extends Component {
                             <a href="/clothing" className="display-mobile-none-b navigation-primary-link">Clothing & Accessories</a>
                         </span>
                     </div>
-                    <div className={'link-plain d-flex justify-content-center align-items-center nav-icons'}>
-                        <div className={'d-flex justify-content-center align-items-center px-4'}>
-                            <i className="far fa-user-circle text-white"></i>
-                        </div>
-                        <i className="fas fa-shopping-cart text-white"></i>
-                    </div>
+                    {/*<div className={'link-plain d-flex justify-content-center align-items-center nav-icons'}>*/}
+                    {/*    <div className={'d-flex justify-content-center align-items-center px-4'}>*/}
+                    {/*        <i className="far fa-user-circle text-white"></i>*/}
+                    {/*    </div>*/}
+                    {/*    <i className="fas fa-shopping-cart text-white"></i>*/}
+                    {/*</div>*/}
                 </div>
             </div>
         );

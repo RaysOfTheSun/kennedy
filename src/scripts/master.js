@@ -18,6 +18,26 @@ window.onload = () => {
     //     }
     // });
 
+    const body = document.body;
+    // const anchors = document.getElementsByTagName('a');
+
+    body.classList.add('body-hidden');
+    setTimeout(() => {
+        body.classList.remove('body-hidden');
+        body.classList.add('body-shown');
+    }, 100);
+
+    // for(let i = 0; i < anchors.length; i++) {
+    //     if(anchors[i].getAttribute('href') !== '#') {
+    //         anchors[i].addEventListener('click', (e) => {
+    //            e.preventDefault();
+    //            body.classList.add('body-hidden');
+    //            window.location.href = anchors[i].getAttribute('href');
+    //         });
+    //     }
+    // }
+
+
     // handlers for our footer
     function handleClick() {
         const target = document.getElementById(this.getAttribute('data-nav'));
